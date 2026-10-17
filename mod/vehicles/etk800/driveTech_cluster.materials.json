@@ -1,0 +1,122 @@
+{
+  "etk_gauges.skin_gauges_milendur.drivetech_f31_orange": {
+    "name": "etk_gauges.skin_gauges_milendur.drivetech_f31_orange",
+    "mapTo": "etk_gauges.skin_gauges_milendur.drivetech_f31_orange",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_base.png",
+        "metallicMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_metal.png",
+        "metallicFactor": 1,
+        "roughnessMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_rough.png",
+        "normalMap": "/vehicles/common/etk/etk_gauges_nm_milendur.normal.dds",
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveIntensityNits": 800,
+        "emissiveMap": "@drivetech_cluster"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "etk_gauges_on.skin_gauges_milendur.drivetech_f31_orange": {
+    "name": "etk_gauges_on.skin_gauges_milendur.drivetech_f31_orange",
+    "mapTo": "etk_gauges_on.skin_gauges_milendur.drivetech_f31_orange",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_base.png",
+        "metallicMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_metal.png",
+        "metallicFactor": 1,
+        "roughnessMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_rough.png",
+        "normalMap": "/vehicles/common/etk/etk_gauges_nm_milendur.normal.dds",
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveIntensityNits": 800,
+        "emissiveMap": "@drivetech_cluster"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "etk_gauges.skin_gauges_milendur.drivetech_f31_white": {
+    "name": "etk_gauges.skin_gauges_milendur.drivetech_f31_white",
+    "mapTo": "etk_gauges.skin_gauges_milendur.drivetech_f31_white",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_base.png",
+        "metallicMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_metal.png",
+        "metallicFactor": 1,
+        "roughnessMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_rough.png",
+        "normalMap": "/vehicles/common/etk/etk_gauges_nm_milendur.normal.dds",
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveIntensityNits": 800,
+        "emissiveMap": "@drivetech_cluster"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "etk_gauges_on.skin_gauges_milendur.drivetech_f31_white": {
+    "name": "etk_gauges_on.skin_gauges_milendur.drivetech_f31_white",
+    "mapTo": "etk_gauges_on.skin_gauges_milendur.drivetech_f31_white",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_base.png",
+        "metallicMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_metal.png",
+        "metallicFactor": 1,
+        "roughnessMap": "/vehicles/etk800/drivetech_cluster/textures/drivetech_f31_rough.png",
+        "normalMap": "/vehicles/common/etk/etk_gauges_nm_milendur.normal.dds",
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveIntensityNits": 800,
+        "emissiveMap": "@drivetech_cluster"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  }
+}

@@ -11,6 +11,8 @@ local config = require("driveTech/config")
 local featureNames = {"stability", "xdrive", "shiftLogic", "pedalMap", "launch", "startStop", "autoHold", "coasting"}
 
 local ctx = nil
+local PROFILE_INDEX = {eco = 0, comfort = 1, sport = 2, sportPlus = 3}
+local STABILITY_INDEX = {dsc = 0, dtc = 1, off = 2}
 local features = {}
 local hasRegisteredMenu = false
 local wasPlayerSeated = false
@@ -258,6 +260,10 @@ local function updateGFX(dt)
 
   forEachFeature("update", dt)
   applyConverter()
+
+  -- state for instrument clusters (e.g. the DriveTech F31 cluster)
+  electrics.values.driveTechProfile = PROFILE_INDEX[ctx.profile] or 1
+  electrics.values.driveTechStability = STABILITY_INDEX[ctx.stability] or 0
 end
 
 local function onReset()

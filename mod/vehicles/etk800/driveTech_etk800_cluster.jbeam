@@ -1,0 +1,78 @@
+{
+// DriveTech F31-style instrument cluster for the ETK 800 with the Milendur interior.
+// The face, scales, needles and warning lamps are drawn live by
+// drivetech_cluster/cluster.js, so needles and scales always agree exactly.
+// Requires "ETK 800 Interior" by Milendur (slot skin_gauges_milendur).
+
+"etk800_gauges_drivetech_f31_orange": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech F31 Cluster (Orange)",
+        "value":600,
+    },
+    "slotType" : "skin_gauges_milendur",
+    "gauge": {
+        "configuration_units": {
+            "unit": "metric",
+        }
+    },
+    "skinName" : "drivetech_f31_orange",
+    "controller": [
+        ["fileName"],
+        ["gauges/genericGauges", {"name":"driveTechCluster"}],
+    ],
+    "driveTechCluster": {
+        "configuration": {
+            "materialName": "@drivetech_cluster",
+            "htmlPath": "local://local/vehicles/etk800/drivetech_cluster/cluster.html",
+            "displayWidth": 2048,
+            "displayHeight": 1024,
+            "theme": "orange",
+        },
+        "displayData": {
+            "electrics": [
+                "ignitionLevel", "wheelspeed", "rpmTacho", "fuel", "oiltemp", "watertemp",
+                "signal_L", "signal_R", "highbeam", "fog", "parkingbrake", "checkengine", "lowfuel",
+                "esc", "tcs", "absActive",
+                "driveTechProfile", "driveTechStability", "driveTechAutoStop", "driveTechLaunchArmed",
+            ],
+        },
+    },
+},
+
+"etk800_gauges_drivetech_f31_white": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech F31 Cluster (White)",
+        "value":600,
+    },
+    "slotType" : "skin_gauges_milendur",
+    "gauge": {
+        "configuration_units": {
+            "unit": "metric",
+        }
+    },
+    "skinName" : "drivetech_f31_white",
+    "controller": [
+        ["fileName"],
+        ["gauges/genericGauges", {"name":"driveTechCluster"}],
+    ],
+    "driveTechCluster": {
+        "configuration": {
+            "materialName": "@drivetech_cluster",
+            "htmlPath": "local://local/vehicles/etk800/drivetech_cluster/cluster.html",
+            "displayWidth": 2048,
+            "displayHeight": 1024,
+            "theme": "white",
+        },
+        "displayData": {
+            "electrics": [
+                "ignitionLevel", "wheelspeed", "rpmTacho", "fuel", "oiltemp", "watertemp",
+                "signal_L", "signal_R", "highbeam", "fog", "parkingbrake", "checkengine", "lowfuel",
+                "esc", "tcs", "absActive",
+                "driveTechProfile", "driveTechStability", "driveTechAutoStop", "driveTechLaunchArmed",
+            ],
+        },
+    },
+},
+}

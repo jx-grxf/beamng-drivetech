@@ -52,6 +52,7 @@ function M.update(ctx, dt)
   end
 
   local allowed = s.enabled and s.profiles[ctx.profile] and not electrics.values.driveTechLaunchArmed
+  electrics.values.driveTechAutoStop = engineStopped and 1 or 0
 
   if engineStopped then
     if not allowed or ctx.brakeInput < 0.15 or ctx.throttleInput > 0.02 or ctx.gearMode ~= "D" then
@@ -74,6 +75,7 @@ function M.update(ctx, dt)
 end
 
 function M.restore(ctx)
+  electrics.values.driveTechAutoStop = 0
   if engineStopped then
     restartEngine(ctx)
   end
