@@ -1,0 +1,13 @@
+{
+  "Body Style": "Wagon",
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Population": 0,
+  "Value": 42000,
+  "Configuration": "DriveTech 320d Touring",
+  "Description": "BMW-style 320d Touring (approx. 190 PS / 400 Nm, 8-speed automatic, 2.81 final drive) with the DriveTech chassis.",
+  "Drivetrain": "RWD"
+}

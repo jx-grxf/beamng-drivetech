@@ -1,0 +1,22 @@
+{
+  "domElement": "<drive-tech-launch-timer></drive-tech-launch-timer>",
+  "name": "DriveTech 0-100 Timer",
+  "types": [
+    "ui.apps.categories.vehicle_info"
+  ],
+  "description": "0-100 km/h, 0-200 km/h, 100-200 km/h and the 1/4 mile. Starts automatically when you pull away.",
+  "css": {
+    "left": "40px",
+    "top": "120px",
+    "width": "260px",
+    "height": "190px",
+    "min-width": "200px",
+    "min-height": "150px"
+  },
+  "author": "jx-grxf",
+  "version": "1.0",
+  "directive": "driveTechLaunchTimer",
+  "category": "Telemetry",
+  "isAuxiliary": false,
+  "interactive": "no"
+}

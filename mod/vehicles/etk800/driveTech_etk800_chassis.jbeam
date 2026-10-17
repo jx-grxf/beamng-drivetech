@@ -1,0 +1,235 @@
+{
+// DriveTech: adaptive chassis for the ETK 800 with every rate in the Tuning menu.
+// Defaults are the ETK ttSport+ adaptive values, which are already close to the
+// wheel rates of a BMW F3x with Adaptive M suspension. The drive modes switch the
+// dampers between soft / regular / hard exactly like the stock adaptive parts.
+
+"etk800_strut_F_drivetech": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech Adaptive Front Struts (adjustable)",
+        "value":1300,
+    },
+    "slotType" : "etk800_strut_F",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_spring_F", "range", "N/m", "DriveTech Chassis", 30000, 15000, 80000, "Front spring rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}],
+        ["$dt_bump_F", "range", "N/m/s", "DriveTech Chassis", 7000, 2000, 14000, "Front bump damping", "Compression damping (regular mode)", {"stepDis":100, "subCategory":"Front"}],
+        ["$dt_rebound_F", "range", "N/m/s", "DriveTech Chassis", 9000, 3000, 18000, "Front rebound damping", "Rebound damping (regular mode)", {"stepDis":100, "subCategory":"Front"}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_strut_F", ["etk800_strut_F"]],
+    ],
+    "controller": [
+        ["fileName"],
+        ["drivingDynamics/actuators/adaptiveDampers" {"name":"adaptiveFrontDamper", "dampBeamNames":["shock_FR", "shock_FL"]}]
+    ],
+    "adaptiveFrontDamper": {
+        "modes": [
+            ["name",    "beamDampCoef", "beamDampFastCoef", "beamDampReboundCoef", "beamDampReboundFastCoef","beamDampVelocitySplitCoef"]
+            ["soft",    0.65,           1,                  0.6,                   1,                        0.7]
+            ["regular", 1,              1,                  1,                     1,                        1]
+            ["hard",    1.35,           1,                  1.26,                  1,                        1.2]
+        ]
+    }
+    "beams": [
+          ["id1:", "id2:"],
+          //front springs
+          {"beamPrecompression":1, "beamType":"|NORMAL"},
+          {"beamDeform":15000,"beamStrength":150000},
+          {"beamSpring":"$dt_spring_F","beamDamp":0},
+          ["fh4r", "fs1r", {"name":"spring_FR", "precompressionRange":0.065,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":40,"volumeFactor":2.1,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":5600}],
+          ["fh4l", "fs1l", {"name":"spring_FL", "precompressionRange":0.065,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":40,"volumeFactor":2.1,"decayFactor":20,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":5600}],
+          //dampers
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDamp":"$dt_bump_F"},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["fh1r", "fs1r", {"name":"shock_FR", "beamDampFast":"$=$dt_bump_F*0.25","beamDampRebound":"$dt_rebound_F","beamDampReboundFast":"$=$dt_rebound_F*0.333","beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
+          ["fh1l", "fs1l", {"name":"shock_FL", "beamDampFast":"$=$dt_bump_F*0.25","beamDampRebound":"$dt_rebound_F","beamDampReboundFast":"$=$dt_rebound_F*0.333","beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
+          //soft initial bumpstop
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":51000,"beamLimitDamp":1000},
+          ["fh4r", "fs1r", {"longBoundRange":1,"shortBoundRange":0.06,"boundZone":0.1,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh4l", "fs1l", {"longBoundRange":1,"shortBoundRange":0.06,"boundZone":0.1,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          //hard bump stop
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":251000,"beamLimitDamp":10000},
+          ["fh4r", "fs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.05,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh4l", "fs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.05,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"etk800_spring_R_drivetech": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech Rear Springs (adjustable)",
+        "value":650,
+    },
+    "slotType" : "etk800_spring_R",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_spring_R", "range", "N/m", "DriveTech Chassis", 34000, 15000, 80000, "Rear spring rate", "Spring stiffness", {"stepDis":500, "subCategory":"Rear"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_spring_R", ["etk800_spring_R"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs
+          {"beamPrecompression":1, "beamType":"|NORMAL"},
+          {"beamDeform":15000,"beamStrength":150000},
+          {"beamSpring":"$dt_spring_R","beamDamp":0},
+          ["rh1r", "r1rr", {"name":"spring_RR", "precompressionRange":0.097,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":40,"volumeFactor":2.2,"decayFactor":30,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":5600}],
+          ["rh1l", "r1ll", {"name":"spring_RL", "precompressionRange":0.097,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":40,"volumeFactor":2.2,"decayFactor":30,"noiseFactor":0.01,"pitchFactor":0.4,"maxStress":5600}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"etk800_shock_R_drivetech": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech Adaptive Rear Shocks (adjustable)",
+        "value":700,
+    },
+    "slotType" : "etk800_shock_R",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_bump_R", "range", "N/m/s", "DriveTech Chassis", 6000, 2000, 14000, "Rear bump damping", "Compression damping (regular mode)", {"stepDis":100, "subCategory":"Rear"}],
+        ["$dt_rebound_R", "range", "N/m/s", "DriveTech Chassis", 8500, 3000, 18000, "Rear rebound damping", "Rebound damping (regular mode)", {"stepDis":100, "subCategory":"Rear"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_shock_R", ["etk800_shock_R","etk800_lowerarm_R"]],
+    ],
+    "controller": [
+        ["fileName"],
+        ["drivingDynamics/actuators/adaptiveDampers" {"name":"adaptiveRearDamper", "dampBeamNames":["shock_RR", "shock_RL"]}]
+    ],
+    "adaptiveRearDamper": {
+        "modes": [
+            ["name",    "beamDampCoef", "beamDampFastCoef", "beamDampReboundCoef", "beamDampReboundFastCoef","beamDampVelocitySplitCoef"]
+            ["soft",    0.7,            1,                  0.65,                  1,                        0.7]
+            ["regular", 1,              1,                  1,                     1,                        1]
+            ["hard",    1.5,            1,                  1.4,                   1,                        1.2]
+        ]
+    }
+    "beams": [
+          ["id1:", "id2:"],
+          //rear shocks
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamDeform":15000,"beamStrength":150000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":0,"beamDamp":"$dt_bump_R"},
+          ["rh1r", "r1rr", {"name":"shock_RR", "beamDampFast":"$=$dt_bump_R*0.25","beamDampRebound":"$dt_rebound_R","beamDampReboundFast":"$=$dt_rebound_R*0.333","beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
+          ["rh1l", "r1ll", {"name":"shock_RL", "beamDampFast":"$=$dt_bump_R*0.25","beamDampRebound":"$dt_rebound_R","beamDampReboundFast":"$=$dt_rebound_R*0.333","beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
+          //soft initial bumpstop
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":61000,"beamLimitDamp":1000},
+          ["rh1r", "r1rr", {"longBoundRange":1,"shortBoundRange":0.035,"boundZone":0.1,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["rh1l", "r1ll", {"longBoundRange":1,"shortBoundRange":0.035,"boundZone":0.1,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          //hard bump stop
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":251000,"beamLimitDamp":10000},
+          ["rh1r", "r1rr", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.05,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["rh1l", "r1ll", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.05,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"etk800_swaybar_F_drivetech": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech Front Sway Bar (adjustable)",
+        "value":650,
+    },
+    "slotType" : "etk800_swaybar_F",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_arb_F", "range", "Nm/rad", "DriveTech Chassis", 4710, 2000, 9000, "Front anti-roll bar", "24mm=2543, 26mm=3502, 28mm=4710, 29mm=5420", {"stepDis":50, "subCategory":"Front"}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_swaybar_F", ["etk800_body","etk800_subframe_F","etk800_swaybar_F"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeWeight":2.5},
+         ["arbfr",-0.58,  -1.35,   0.3],
+         ["arbfl", 0.58,  -1.35,   0.3],
+         {"group":""},
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":"$dt_arb_F", "damp":10, "deform":10000, "strength":9999999},
+        ["arbfr", "fx1r", "fx1l", "arbfl"],
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2501000,"beamDamp":100},
+          {"beamDeform":15000,"beamStrength":350000},
+          ["arbfr", "fh4r"],
+          ["arbfl", "fh4l"],
+          ["arbfr", "fx1r"],
+          ["arbfl", "fx1l"],
+          ["arbfr", "fx1l"],
+          ["arbfl", "fx1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"etk800_swaybar_R_drivetech": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech Rear Sway Bar (adjustable)",
+        "value":550,
+    },
+    "slotType" : "etk800_swaybar_R",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_arb_R", "range", "Nm/rad", "DriveTech Chassis", 1101, 300, 3000, "Rear anti-roll bar", "14mm=506, 15mm=667, 16mm=864, 17mm=1101", {"stepDis":25, "subCategory":"Rear"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_swaybar_R", ["etk800_swaybar_R", "etk800_subframe_R", "etk800_body"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeWeight":2.25},
+         ["arbrr",-0.653,  1.466,  0.36],
+         ["arbrl", 0.653,  1.466,  0.36],
+         {"group":""},
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":"$dt_arb_R", "damp":10, "deform":1000, "strength":9999999},
+        ["arbrr", "rx4r", "rx4l", "arbrl"],
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2501000,"beamDamp":100},
+          {"beamDeform":15000,"beamStrength":350000},
+          ["arbrr", "rh1r"],
+          ["arbrl", "rh1l"],
+          ["arbrr", "rx4r"],
+          ["arbrl", "rx4l"],
+          ["arbrr", "rx4l"],
+          ["arbrl", "rx4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

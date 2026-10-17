@@ -1,0 +1,8 @@
+{
+"driveTech_cycleProfile"     :{"cat":"vehicle", "order": 90.1, "ctx": "vlua", "onDown": "if driveTech then driveTech.cycleProfile() end", "title": "DriveTech: Cycle drive profile", "desc": "ECO PRO / COMFORT / SPORT / SPORT+" },
+"driveTech_cycleStability"   :{"cat":"vehicle", "order": 90.2, "ctx": "vlua", "onDown": "if driveTech then driveTech.cycleStability() end", "title": "DriveTech: DSC / DTC / DSC OFF", "desc": "Cycle the stability control mode" },
+"driveTech_toggleLaunch"     :{"cat":"vehicle", "order": 90.3, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('launch') end", "title": "DriveTech: Toggle launch control", "desc": "Switch launch control on or off" },
+"driveTech_toggleStartStop"  :{"cat":"vehicle", "order": 90.4, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('startStop') end", "title": "DriveTech: Toggle auto start-stop", "desc": "Switch auto start-stop on or off" },
+"driveTech_toggleAutoHold"   :{"cat":"vehicle", "order": 90.5, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('autoHold') end", "title": "DriveTech: Toggle auto hold", "desc": "Switch auto hold on or off" },
+"driveTech_reloadSettings"   :{"cat":"vehicle", "order": 90.6, "ctx": "vlua", "onDown": "if driveTech then driveTech.reloadSettings() end", "title": "DriveTech: Reload settings", "desc": "Re-read settings/driveTech.json" }
+}
