@@ -106,7 +106,7 @@
     "etk_intake_i4_2.0_diesel": "etk_intake_i4_2.0_diesel_turbo",
     "etk_oilpan_i4": "etk_oilpan_i4",
     "etk_transfer_case": "etk_transfer_case_RWD",
-    "etk_transmission": "etk_transmission_8A_diesel",
+    "etk_transmission": "etk_transmission_8A_diesel_drivetech_8hp50",
     "gps": "",
     "licenseplate_design_2_1": "",
     "linelock": "",

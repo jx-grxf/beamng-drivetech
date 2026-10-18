@@ -85,6 +85,94 @@
     }
 },
 
+"etk_engine_i6_3.0_petrol_ecu_drivetech_340i": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech 340i ECU (approx. 326 PS / 450 Nm)",
+        "value":2500,
+    },
+    "slotType" : "etk_engine_i6_3.0_petrol_ecu",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_engine_ecu_speedlimit","etk_engine_ecu_speedlimit_250", "Speed Limiter", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_340i_boost", "range", "psi", "DriveTech", 13, 8, 22, "Boost (wastegate)", "Stock approx. 13 psi. Higher = more power", {"stepDis":0.5}],
+        ["$dt_340i_revlimit", "range", "rpm", "DriveTech", 7000, 6000, 7500, "Rev limiter", "Stock 340i (B58): approx. 7000 rpm", {"stepDis":50}],
+    ],
+    "mainEngine":{
+        "revLimiterRPM":"$dt_340i_revlimit",
+        "revLimiterType": "soft",
+    },
+    "turbocharger": {
+        "wastegateStart":"$dt_340i_boost",
+        "maxExhaustPower": 14000,
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            //B58: flat 450 Nm from about 1500 to 5000 rpm, 240 kW from 5500 to 6500 rpm
+            [0,     0.0,    0.25],
+            [650,   0.30,   0.40],
+            [1000,  0.75,   0.70],
+            [1400,  0.90,   1.0],
+            [2000,  0.59,   1.0],
+            [2500,  0.49,   1.0],
+            [3000,  0.475,  1.0],
+            [4000,  0.495,  1.0],
+            [5000,  0.55,   1.0],
+            [5500,  0.44,   1.0],
+            [6000,  0.32,   1.0],
+            [6500,  0.225,  1.0],
+            [7000,  0.205,  1.0],
+            [8000,  0.10,   1.0],
+        ],
+    }
+},
+
+"etk_engine_i6_3.0_diesel_ecu_drivetech_340d": {
+    "information":{
+        "authors":"jx-grxf",
+        "name":"DriveTech 340d ECU (approx. 313 PS / 630 Nm)",
+        "value":1500,
+    },
+    "slotType" : "etk_engine_i6_3.0_diesel_ecu",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_engine_ecu_speedlimit","etk_engine_ecu_speedlimit_250", "Speed Limiter", {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$dt_340d_boost", "range", "psi", "DriveTech", 21, 15, 32, "Boost (wastegate)", "Stock approx. 21 psi. Higher = more power", {"stepDis":0.5}],
+        ["$dt_340d_revlimit", "range", "rpm", "DriveTech", 5000, 4400, 5800, "Rev limiter", "Stock 335d (N57 twin turbo): approx. 5000 rpm", {"stepDis":50}],
+    ],
+    "mainEngine":{
+        "revLimiterRPM":"$dt_340d_revlimit",
+        "revLimiterType": "soft",
+    },
+    "turbocharger": {
+        "wastegateStart":"$dt_340d_boost",
+        "maxExhaustPower": 5000,
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            //N57 twin turbo (335d): 630 Nm from 1500 to 2500 rpm, 230 kW at 4400 rpm
+            [0,     0.0,    0.1],
+            [650,   0.03,   0.35],
+            [850,   0.39,   0.55],
+            [1000,  0.66,   0.75],
+            [1450,  1.0,    0.9],
+            [2000,  0.79,   1.0],
+            [2500,  0.77,   1.0],
+            [3000,  0.68,   1.0],
+            [3500,  0.66,   1.0],
+            [4000,  0.65,   1.0],
+            [4400,  0.72,   1.0],
+            [5000,  0.71,   1.0],
+            [6000,  0.29,   1.0],
+            [8000,  0.05,   0.01],
+        ],
+    }
+},
+
 "etk_finaldrive_R_drivetech": {
     "information":{
         "authors":"jx-grxf",
@@ -94,7 +182,7 @@
     "slotType" : "etk_finaldrive_R",
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$dt_finaldrive", "range", ":1", "DriveTech", 2.563, 2.2, 4.1, "Final drive ratio", "330d xDrive: 2.563, 320d: approx. 2.81. Front and rear share this value", {"stepDis":0.001}],
+        ["$dt_finaldrive", "range", ":1", "DriveTech", 2.563, 2.2, 4.1, "Final drive ratio", "330d / 340d: 2.563, 320d / 340i: 2.813. Front and rear share this value", {"stepDis":0.001}],
     ],
     "differential_R" : {
         "gearRatio":"$dt_finaldrive",
@@ -110,7 +198,7 @@
     "slotType" : "etk_finaldrive_F",
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$dt_finaldrive", "range", ":1", "DriveTech", 2.563, 2.2, 4.1, "Final drive ratio", "330d xDrive: 2.563, 320d: approx. 2.81. Front and rear share this value", {"stepDis":0.001}],
+        ["$dt_finaldrive", "range", ":1", "DriveTech", 2.563, 2.2, 4.1, "Final drive ratio", "330d / 340d: 2.563, 320d / 340i: 2.813. Front and rear share this value", {"stepDis":0.001}],
     ],
     "torsionReactorF" : {
         "gearRatio":"$dt_finaldrive",

@@ -1,0 +1,13 @@
+{
+  "Body Style": "Wagon",
+  "Config Type": "Custom",
+  "Fuel Type": "Gasoline",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Population": 0,
+  "Value": 54000,
+  "Configuration": "DriveTech 340i Touring",
+  "Description": "BMW-style 340i Touring (B58, approx. 326 PS / 450 Nm, ZF 8HP50 8-speed automatic, 2.813 final drive) with the DriveTech chassis.",
+  "Drivetrain": "RWD"
+}

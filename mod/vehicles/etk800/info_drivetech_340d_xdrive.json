@@ -1,0 +1,13 @@
+{
+  "Body Style": "Wagon",
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Population": 0,
+  "Value": 57500,
+  "Configuration": "DriveTech 340d xDrive Touring",
+  "Description": "BMW-style 340d xDrive Touring with the data of the F31 335d xDrive (approx. 313 PS / 630 Nm, ZF 8HP70 8-speed automatic, 2.563 final drive) and the DriveTech chassis.",
+  "Drivetrain": "AWD"
+}

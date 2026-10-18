@@ -1,0 +1,13 @@
+{
+  "Body Style": "Wagon",
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Population": 0,
+  "Value": 49500,
+  "Configuration": "DriveTech 330d Touring",
+  "Description": "BMW-style 330d Touring (approx. 258 PS / 560 Nm, ZF 8HP70 8-speed automatic, 2.563 final drive) with the DriveTech chassis.",
+  "Drivetrain": "RWD"
+}
