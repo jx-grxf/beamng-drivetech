@@ -8,7 +8,7 @@ Driving experience control · DSC / DTC / DSC OFF · xDrive · realistic automat
 
 ![BeamNG.drive](https://img.shields.io/badge/BeamNG.drive-0.39-orange)
 ![Lua](https://img.shields.io/badge/Lua-LuaJIT%202.1-blue)
-![Tests](https://img.shields.io/badge/tests-29%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-34%20passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
@@ -30,19 +30,25 @@ DriveTech loads into **every** vehicle automatically. Each feature checks whethe
 
 ## Features
 
-| Feature | What it does |
-|---|---|
-| **Driving experience control** | ECO PRO, COMFORT, SPORT, SPORT+. Also switches the vehicle's own drive modes (dampers, steering, ...). |
-| **Throttle map per profile** | ECO PRO soft and progressive, SPORT+ sharp. Pedal to the floor (kickdown) is always 100 %. |
-| **Automatic shift logic** | Upshifts promptly after lifting off in D instead of hanging in gear at high rpm. SPORT holds the gear, downshifts when braking hard and never upshifts mid-corner. |
-| **DSC / DTC / DSC OFF** | DSC = the car's stock tuning. DTC allows a lot more slip and still catches you. DSC OFF disables traction and stability control (ABS stays on). |
-| **xDrive** | Rear-biased preload of the AWD clutch per DSC mode, fully locked when pulling away below 20 km/h. |
-| **Launch control** | Automatic/DCT: brake + full throttle, release the brake. Manual: clutch + full throttle, drop the clutch. On torque converter automatics the converter is unloaded so the engine can actually reach launch rpm. Like BMW, only in SPORT+ or with DTC / DSC OFF (configurable). |
-| **Auto start-stop** | Engine switches off at a standstill on the brake in D and restarts when you release the brake. ECO PRO and COMFORT only. |
-| **Auto hold** | Holds the car after stopping, throttle releases it. Off by default. |
-| **ECO PRO coasting** | Between 50 and 160 km/h the engine is decoupled when you lift off and idles while the car rolls. |
-| **0-100 timer (UI app)** | 0-100, 0-200, 100-200 km/h and the 1/4 mile. Starts automatically when you pull away. |
-| **ETK 800 BMW parts** | 330d and 320d ECUs, adjustable final drive, adaptive chassis with sliders for springs, dampers and anti-roll bars. |
+Everything DriveTech has at a glance:
+
+| Feature | What it does | Where |
+|---|---|---|
+| **Driving experience control** | ECO PRO, COMFORT, SPORT, SPORT+. Also switches the vehicle's own drive modes (dampers, steering, ...). | radial menu, key binding |
+| **Throttle map per profile** | ECO PRO soft and progressive, SPORT+ sharp. Pedal to the floor (kickdown) is always 100 %. | automatic |
+| **Automatic shift logic** | Upshifts promptly after lifting off in D instead of hanging in gear at high rpm. SPORT holds the gear, downshifts when braking hard and never upshifts mid-corner. | automatic |
+| **DSC / DTC / DSC OFF** | DSC = the car's stock tuning. DTC allows a lot more slip and still catches you. DSC OFF disables traction and stability control (ABS stays on). | radial menu, key binding |
+| **xDrive** | Rear-biased preload of the AWD clutch per DSC mode, fully locked when pulling away below 20 km/h. | automatic |
+| **Launch control** | Automatic/DCT: brake + full throttle, release the brake. Manual: clutch + full throttle, drop the clutch. On torque converter automatics the converter is unloaded so the engine can actually reach launch rpm. Like BMW, only in SPORT+ or with DTC / DSC OFF (configurable). | radial menu, key binding |
+| **Auto start-stop** | Engine switches off at a standstill on the brake in D and restarts when you release the brake. ECO PRO and COMFORT only. | radial menu, key binding |
+| **Auto hold** | Holds the car after stopping, throttle releases it. Off by default. | radial menu, key binding |
+| **ECO PRO coasting** | Between 50 and 160 km/h the engine is decoupled when you lift off and idles while the car rolls. | automatic in ECO PRO |
+| **0-100 timer** | 0-100, 0-200, 100-200 km/h and the 1/4 mile. Starts automatically when you pull away. | UI app *DriveTech 0-100 Timer* |
+| **Rain** | Rain with wet roads on any map, light / medium / heavy. Paved surfaces get about 25 % less grip (stock wet asphalt only loses about 6 %). | UI app *DriveTech Rain*, key binding |
+| **Aquaplaning** | Optional, only while it rains. Water builds up on the road over time; each tyre floats on its own depending on speed, water depth, tread depth (8 / 5 / 3 / 1.6 mm), tyre pressure and width. Puddles and ruts hold more water, so one side can float before the other. New tyres in 8 mm water float at about 85-90 km/h, tyres at 1.6 mm already at about 60-65 km/h. | UI app *DriveTech Rain*, key binding |
+| **ETK 800 BMW setups** | 330d xDrive Touring and 320d Touring configurations with real engine, gearbox and chassis data. | vehicle selector → ETK 800 |
+| **ETK 800 BMW parts** | 330d and 320d ECUs, adjustable final drive, adaptive chassis with sliders for springs, dampers and anti-roll bars. | parts menu, category *DriveTech* |
+| **F31 instrument cluster** (beta) | BMW F31-style cluster in orange or white, drawn live: needles, warning lamps, DriveTech profile, DSC mode, auto-stop and launch control. Needs the *ETK 800 Improved Interior* mod by Milendur. | parts menu, slot *gauges* |
 
 ## Installation
 
@@ -67,8 +73,10 @@ On the first vehicle DriveTech creates `settings/driveTech.json` with all defaul
 | DriveTech: Toggle auto start-stop | optional |
 | DriveTech: Toggle auto hold | optional |
 | DriveTech: Reload settings | after editing the JSON |
+| DriveTech: Toggle rain | category *Gameplay*, optional |
+| DriveTech: Toggle aquaplaning | category *Gameplay*, optional |
 
-**Adding the 0-100 app (0.39):** `Esc` → **UI Apps** (UI edit mode) → **Add App** in the middle of the screen → pick *DriveTech 0-100 Timer* → place it. To move it later, click the app once to select it, then drag.
+**Adding the 0-100 app (0.39):** `Esc` → **UI Apps** (UI edit mode) → **Add App** in the middle of the screen → pick *DriveTech 0-100 Timer* → place it. To move it later, click the app once to select it, then drag. The *DriveTech Rain* app is added the same way.
 
 ## Which cars?
 
@@ -198,7 +206,11 @@ mod/                       contents of DriveTech.zip
   lua/vehicle/driveTech/config.lua            defaults, JSON load/save
   lua/vehicle/driveTech/features/*.lua        one file per feature
   lua/ge/extensions/core/input/actions/       key bindings
+  lua/ge/extensions/driveTechRain.lua         rain, wet grip, water film, loaded by scripts/driveTech/modScript.lua
+  lua/vehicle/extensions/auto/driveTechAquaplaning.lua   aquaplaning per tyre
+  lua/vehicle/driveTech/aquaplaning.lua       aquaplaning model (critical speed, puddles)
   ui/modules/apps/DriveTechLaunchTimer/       0-100 app
+  ui/modules/apps/DriveTechRain/              rain + aquaplaning app
   vehicles/                                   ETK parts and configurations
 tests/                     scenario tests with BeamNG mocks (LuaJIT 2.1)
 tools/build.py             validates every jbeam/json file and builds dist/DriveTech.zip

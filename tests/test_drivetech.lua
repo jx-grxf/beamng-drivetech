@@ -371,6 +371,104 @@ test("radial menu entries build and their actions run", function()
   check(#mock.errors() == 0, "errors: " .. table.concat(mock.errors(), "; "))
 end)
 
+-- Aquaplaning -----------------------------------------------------------------
+
+local aqua = require("driveTech/aquaplaning")
+
+test("aquaplaning model: critical speeds near published tyre tests", function()
+  local new8 = aqua.criticalSpeed(8, 8, 230, 0.205)
+  local worn8 = aqua.criticalSpeed(8, 1.6, 230, 0.205)
+  check(new8 > 80 and new8 < 95, "new tyre, 8 mm water: " .. new8)
+  check(worn8 > 55 and worn8 < 70, "worn tyre, 8 mm water: " .. worn8)
+  check(aqua.criticalSpeed(2.5, 8, 230, 0.205) > 110, "new tyre in normal rain stays safe on country roads")
+  check(aqua.criticalSpeed(8, 8, 230, 0.285) < new8, "wide tyres float earlier")
+  check(aqua.criticalSpeed(8, 8, 180, 0.205) < new8, "low pressure floats earlier")
+  check(aqua.criticalSpeed(0.2, 8, 230, 0.205) == math.huge, "a damp road never floats")
+end)
+
+test("aquaplaning model: lift and grip ramp from partial to full", function()
+  check(aqua.lift(50, 100) == 0, "well below")
+  local partial = aqua.lift(85, 100)
+  check(partial > 0 and partial < 1, "partial at 85 % " .. partial)
+  check(aqua.lift(110, 100) == 1, "full above critical")
+  near(aqua.grip(0), 1, 1e-9, "full grip")
+  near(aqua.grip(1), aqua.MIN_GRIP, 1e-9, "floating grip")
+  for x = -200, 200, 7 do
+    local d = aqua.waterAt(x, x * 0.7, 2)
+    check(d >= 0.8 and d < 8, "puddle depth in range: " .. d)
+  end
+end)
+
+local function spawnAquaplaning(opts)
+  opts = opts or {}
+  mock.setup({})
+  local world = {friction = {}, gui = {}, geCalls = {}}
+  local wheelList = {}
+  local nodes = {}
+  local cid = 0
+  for i, name in ipairs({"FL", "FR", "RL", "RR"}) do
+    local tread = {}
+    for _ = 1, 3 do
+      nodes[cid] = {frictionCoef = 1.2, slidingFrictionCoef = 1.1}
+      table.insert(tread, cid)
+      cid = cid + 1
+    end
+    wheelList[i - 1] = {name = name, cid = i - 1, hasTire = true, rotatorType = "wheel", node1 = tread[1], tireWidth = 0.225,
+      treadNodes = tread, pressureGroup = "p" .. name, contactMaterialID1 = 4, contactMaterialID2 = opts.material or 30,
+      isTireDeflated = false, isBroken = false}
+  end
+  _G.wheels = {wheelRotators = wheelList}
+  _G.v.data = {nodes = nodes, pressureGroups = {pFL = 1, pFR = 2, pRL = 3, pRR = 4}}
+  _G.objectId = 7
+  _G.playerInfo.firstPlayerSeated = true
+  _G.electrics.values.airspeed = 0
+  _G.guihooks.trigger = function(name, data) table.insert(world.gui, data) end
+  _G.obj = {
+    getPosition = function() return {x = 0, y = 0, z = 0} end,
+    getNodePosition = function() return {x = 0, y = 0, z = 0} end,
+    getGroupPressure = function() return 101325 + 230000 end,
+    setNodeFrictionSlidingCoefs = function(_, n, f, s) world.friction[n] = {f, s} end,
+    queueGameEngineLua = function(_, cmd) table.insert(world.geCalls, cmd) end,
+  }
+  local ext = dofile(MOD_ROOT .. "/lua/vehicle/extensions/auto/driveTechAquaplaning.lua")
+  ext.onExtensionLoaded()
+  return ext, world, wheelList
+end
+
+test("aquaplaning: tyres float in deep water at speed and recover", function()
+  local ext, world = spawnAquaplaning()
+  check(world.geCalls[1]:find("syncVehicle%(7%)"), "asks GE for the water state")
+  driveTechAquaplaning.setWater(6, 1.6, {30})
+  electrics.values.airspeed = 140 / 3.6
+  frames(ext, 60)
+  near(world.friction[0][1], 1.2 * aqua.MIN_GRIP, 0.02, "tread node friction")
+  check(world.gui[#world.gui].wheels.FL > 0.95, "UI sees the floating tyre")
+  electrics.values.airspeed = 40 / 3.6
+  frames(ext, 120)
+  near(world.friction[0][1], 1.2, 1e-9, "full grip again")
+  near(world.friction[0][2], 1.1, 1e-9, "sliding friction restored")
+  check(#mock.errors() == 0, "errors: " .. table.concat(mock.errors(), "; "))
+end)
+
+test("aquaplaning: off-road, flat tyres and switching off leave friction alone", function()
+  local ext, world, wheelList = spawnAquaplaning({material = 12})
+  driveTechAquaplaning.setWater(6, 1.6, {30})
+  electrics.values.airspeed = 140 / 3.6
+  frames(ext, 60)
+  check(next(world.friction) == nil, "grass is not a wet road")
+
+  ext, world, wheelList = spawnAquaplaning()
+  wheelList[0].isTireDeflated = true
+  driveTechAquaplaning.setWater(6, 1.6, {30})
+  electrics.values.airspeed = 140 / 3.6
+  frames(ext, 60)
+  check(world.friction[0] == nil, "flat tyre keeps beamstate's friction")
+  check(world.friction[3] ~= nil, "other tyres float")
+  driveTechAquaplaning.setWater(0, 1.6)
+  frames(ext, 120)
+  near(world.friction[3][1], 1.2, 1e-9, "aquaplaning off restores grip")
+end)
+
 -------------------------------------------------------------------------------
 
 local passed, failed = 0, 0

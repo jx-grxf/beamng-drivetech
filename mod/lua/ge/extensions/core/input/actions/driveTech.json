@@ -4,5 +4,7 @@
 "driveTech_toggleLaunch"     :{"cat":"vehicle", "order": 90.3, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('launch') end", "title": "DriveTech: Toggle launch control", "desc": "Switch launch control on or off" },
 "driveTech_toggleStartStop"  :{"cat":"vehicle", "order": 90.4, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('startStop') end", "title": "DriveTech: Toggle auto start-stop", "desc": "Switch auto start-stop on or off" },
 "driveTech_toggleAutoHold"   :{"cat":"vehicle", "order": 90.5, "ctx": "vlua", "onDown": "if driveTech then driveTech.toggleFeature('autoHold') end", "title": "DriveTech: Toggle auto hold", "desc": "Switch auto hold on or off" },
-"driveTech_reloadSettings"   :{"cat":"vehicle", "order": 90.6, "ctx": "vlua", "onDown": "if driveTech then driveTech.reloadSettings() end", "title": "DriveTech: Reload settings", "desc": "Re-read settings/driveTech.json" }
+"driveTech_reloadSettings"   :{"cat":"vehicle", "order": 90.6, "ctx": "vlua", "onDown": "if driveTech then driveTech.reloadSettings() end", "title": "DriveTech: Reload settings", "desc": "Re-read settings/driveTech.json" },
+"driveTech_toggleRain"       :{"cat":"gameplay", "order": 90.7, "ctx": "tlua", "onDown": "if driveTechRain then driveTechRain.toggle() end", "title": "DriveTech: Toggle rain", "desc": "Rain with wet roads on or off, on any map" },
+"driveTech_toggleAquaplaning":{"cat":"gameplay", "order": 90.8, "ctx": "tlua", "onDown": "if driveTechRain then driveTechRain.toggleAquaplaning() end", "title": "DriveTech: Toggle aquaplaning", "desc": "Aquaplaning on wet roads on or off (needs rain)" }
 }

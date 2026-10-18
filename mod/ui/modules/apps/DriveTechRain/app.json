@@ -1,0 +1,22 @@
+{
+  "domElement": "<drive-tech-rain></drive-tech-rain>",
+  "name": "DriveTech Rain",
+  "types": [
+    "ui.apps.categories.utility"
+  ],
+  "description": "Rain with wet roads on any map, three intensities. Optional realistic aquaplaning per tyre (water depth, tread depth, tyre pressure and width).",
+  "css": {
+    "left": "40px",
+    "top": "330px",
+    "width": "220px",
+    "height": "250px",
+    "min-width": "190px",
+    "min-height": "200px"
+  },
+  "author": "jx-grxf",
+  "version": "1.1",
+  "directive": "driveTechRain",
+  "category": "Gameplay",
+  "isAuxiliary": false,
+  "interactive": "required"
+}
