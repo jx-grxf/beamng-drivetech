@@ -24,6 +24,7 @@ DriveTech loads into **every** vehicle automatically. Each feature checks whethe
 - [Usage](#usage)
 - [Which cars?](#which-cars)
 - [ETK 800 as a BMW 3 Series](#etk-800-as-a-bmw-3-series)
+- [City bus as an Iveco](#city-bus-as-an-iveco)
 - [Settings](#settings)
 - [What DriveTech never does](#what-drivetech-never-does)
 - [Development](#development)
@@ -49,6 +50,7 @@ Everything DriveTech has at a glance:
 | **ETK 800 BMW setups** | 320d, 330d, 340d and 340i Touring, each as rear-wheel drive and xDrive (8 configurations), with real engine, gearbox and chassis data. | vehicle selector → ETK 800 |
 | **ETK 800 BMW parts** | 320d, 330d, 340d and 340i ECUs, ZF 8HP50 gearbox, adjustable final drive, adaptive chassis with sliders for springs, dampers and anti-roll bars. | parts menu, category *DriveTech* |
 | **F31 instrument cluster** (beta) | BMW F31-style cluster in orange or white, drawn live: needles, warning lamps, DriveTech profile, DSC mode, auto-stop and launch control. Needs the *ETK 800 Improved Interior* mod by Milendur. | parts menu, slot *gauges* |
+| **City bus Iveco setups** | Urbanway 360 and Crossway LE 400 for the Wentward DT40L: Cursor 9 diesel, ZF EcoLife 6-speed automatic, 100 km/h speed limiter. | vehicle selector → Wentward DT40L |
 
 ## Installation
 
@@ -145,6 +147,33 @@ Sources: BMW Group technical data *BMW 3 Series Touring LCI (F31)* (edition 11/2
 | DriveTech Sway Bars | front / rear sway bar | stiffness (with mm reference) |
 
 The chassis defaults match the ETK ttSport+ adaptive suspension, which is already close to the wheel rates of an F3x with Adaptive M suspension (approx. 26 N/mm front). The drive modes still switch the dampers between soft, regular and hard.
+
+## City bus as an Iveco
+
+The stock Wentward DT40L has an 8.9 l diesel with up to approx. 350 PS / 1475 Nm, but only a 4-speed automatic that runs into the rev limiter at about 92 km/h. DriveTech adds two configurations (vehicle selector → Wentward DT40L) with the drivetrain of current Iveco buses:
+
+| Configuration | Engine | Power / torque (Iveco) | Gearbox | Final drive |
+|---|---|---|---|---|
+| DriveTech Urbanway 360 | Cursor 9, 8.7 l diesel | 360 PS at 2200 rpm / 1650 Nm from 1200 to 1500 rpm | ZF EcoLife 6-speed | 4.63 |
+| DriveTech Crossway LE 400 | Cursor 9, 8.7 l diesel | 400 PS / 1700 Nm from 1200 to 1650 rpm | ZF EcoLife 6-speed | 4.63 |
+
+- **ZF EcoLife:** 3.364 / 1.909 / 1.421 / 1.000 / 0.720 / 0.615. Reverse stays at the stock 5.03. The torque converter gets a 2800 Nm lockup clutch; the stock one (1500 Nm) would slip behind a Cursor 9.
+- The turbo calibration is computed from BeamNG's turbo model so that net torque at full boost follows the Iveco figures. The stock engine block, sound and weight stay.
+- Speed limiter at 100 km/h like EU buses, rev limiter at 2300 rpm, almost no visible smoke (Euro VI with particulate filter).
+- The 4.63 final drive is from a test of the Crossway LE 360. No figure was found for the Urbanway, so it uses the same ratio.
+
+Sources: FPT Industrial data sheet *Cursor 9* (power, torque), busplaner bus test *Iveco Urbanway* (torque range), busnetz bus test 05/2019 *Iveco Crossway LE* (gearbox, final drive).
+
+**New parts** (category *DriveTech*):
+
+| Part | Slot | Sliders |
+|---|---|---|
+| DriveTech Cursor 9 Turbo (360 PS / 1650 Nm) | intake | boost |
+| DriveTech Cursor 9 Turbo (400 PS / 1700 Nm) | intake | boost |
+| DriveTech Cursor 9 Engine Management | engine management | rev limiter, speed limiter |
+| DriveTech 6-Speed Automatic (ZF EcoLife) | transmission | – |
+| DriveTech EcoLife Torque Converter | torque converter | – |
+| DriveTech Rear Final Drive | rear final drive | ratio 3.0 to 6.5 |
 
 ## Settings
 

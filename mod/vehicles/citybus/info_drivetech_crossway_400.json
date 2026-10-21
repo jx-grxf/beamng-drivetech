@@ -1,0 +1,12 @@
+{
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Drivetrain": "RWD",
+  "Population": 0,
+  "Value": 340000,
+  "Configuration": "DriveTech Crossway LE 400",
+  "Description": "Intercity bus with the drivetrain of an Iveco Crossway LE: Cursor 9 diesel (8.7 l, approx. 400 PS / 1700 Nm), ZF EcoLife 6-speed automatic, 4.63 final drive, speed limiter at 100 km/h."
+}

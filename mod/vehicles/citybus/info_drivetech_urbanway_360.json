@@ -1,0 +1,12 @@
+{
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Drivetrain": "RWD",
+  "Population": 0,
+  "Value": 320000,
+  "Configuration": "DriveTech Urbanway 360",
+  "Description": "City bus with the drivetrain of a current Iveco Urbanway: Cursor 9 diesel (8.7 l, approx. 360 PS / 1650 Nm), ZF EcoLife 6-speed automatic, 4.63 final drive, speed limiter at 100 km/h."
+}
