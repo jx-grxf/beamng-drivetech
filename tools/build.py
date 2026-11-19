@@ -1,4 +1,4 @@
-"""Validates the mod files and packs dist/DriveTech.zip.
+"""Validates the mod files and packs dist/DriveTech.zip and dist/DriveTech_Bus.zip.
 
     python tools/build.py              # validate + build
     python tools/build.py --install    # also install into the BeamNG mods folder (works while the game runs)
@@ -12,9 +12,11 @@ import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MOD = os.path.join(ROOT, "mod")
+MOD_BUS = os.path.join(ROOT, "mod_bus")
 DIST = os.path.join(ROOT, "dist", "DriveTech.zip")
 DIST_CORE = os.path.join(ROOT, "dist", "DriveTech_core.zip")
 DIST_APPS = os.path.join(ROOT, "dist", "DriveTech_apps.zip")
+DIST_BUS = os.path.join(ROOT, "dist", "DriveTech_Bus.zip")
 
 
 def strip_comments(text):
@@ -59,10 +61,31 @@ def jbeam_to_json(text):
 
 def validate():
     problems = []
-    for folder, _, files in os.walk(MOD):
+    for root in (MOD, MOD_BUS):
+        problems += validate_tree(root)
+    problems += check_bus_generated()
+    return problems
+
+
+def check_bus_generated():
+    """The bus parts are generated; a hand edit would be lost on the next run of gen_bus.py."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import gen_bus
+    problems = []
+    for fam in gen_bus.FAMILIES.values():
+        path = os.path.join(MOD_BUS, fam["file"])
+        expected = json.dumps(gen_bus.family_parts(fam), indent=1) + "\n"
+        if not os.path.exists(path) or open(path, encoding="utf-8").read() != expected:
+            problems.append(f"{fam['file']}: out of date, run python tools/gen_bus.py")
+    return problems
+
+
+def validate_tree(root):
+    problems = []
+    for folder, _, files in os.walk(root):
         for name in files:
             path = os.path.join(folder, name)
-            rel = os.path.relpath(path, MOD)
+            rel = os.path.relpath(path, ROOT)
             if name.endswith((".jbeam", ".pc")):
                 try:
                     json.loads(jbeam_to_json(open(path, encoding="utf-8").read()))
@@ -76,17 +99,17 @@ def validate():
     return problems
 
 
-def pack(target, include):
-    """Packs every file below mod/ for which include(relative_path) is true."""
+def pack(target, include, root=MOD):
+    """Packs every file below root for which include(relative_path) is true."""
     os.makedirs(os.path.dirname(target), exist_ok=True)
     tmp = target + ".tmp"
     count = 0
     with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
-        for folder, dirs, files in os.walk(MOD):
+        for folder, dirs, files in os.walk(root):
             dirs.sort()
             for name in sorted(files):
                 path = os.path.join(folder, name)
-                rel = os.path.relpath(path, MOD).replace("\\", "/")
+                rel = os.path.relpath(path, root).replace("\\", "/")
                 if include(rel):
                     # fixed timestamp: identical content gives an identical zip
                     info = zipfile.ZipInfo(rel, date_time=(2026, 1, 1, 0, 0, 0))
@@ -109,7 +132,8 @@ def build():
     full = pack(DIST, lambda rel: True)
     pack(DIST_CORE, lambda rel: not is_ui_app(rel))
     pack(DIST_APPS, is_ui_app)
-    return full
+    bus = pack(DIST_BUS, lambda rel: True, MOD_BUS)
+    return full, bus
 
 
 def user_mods_folder():
@@ -153,6 +177,7 @@ def install():
     # so the apps zip is only touched when the app itself changed
     hot_swap(DIST_APPS, os.path.join(mods, "DriveTech_apps.zip"))
     hot_swap(DIST_CORE, os.path.join(mods, "DriveTech_core.zip"))
+    hot_swap(DIST_BUS, os.path.join(mods, "DriveTech_Bus.zip"))
 
 
 if __name__ == "__main__":
@@ -163,6 +188,7 @@ if __name__ == "__main__":
             print("  " + p)
         sys.exit(1)
     print("validation ok")
-    print(f"built {DIST} ({build()} files)")
+    full, bus = build()
+    print(f"built {DIST} ({full} files) and {DIST_BUS} ({bus} files)")
     if "--install" in sys.argv:
         install()

@@ -1,0 +1,2344 @@
+{
+ "citybus_ai_turbo_drivetech_cursor9_360": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Cursor 9 Turbo (360 PS / 1650 Nm)",
+   "value": 7200
+  },
+  "slotType": "citybus_ai_turbo",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_boost_360",
+    "range",
+    "psi",
+    "DriveTech",
+    39.5,
+    29.5,
+    49.5,
+    "Boost (wastegate)",
+    "Stock calibration 39.5 psi. Higher = more power",
+    {
+     "stepDis": 0.5
+    }
+   ]
+  ],
+  "turbocharger": {
+   "hissLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
+   "whineLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
+   "bovEnabled": false,
+   "bovSoundVolumeCoef": 0.0,
+   "hissVolumePerPSI": 0.0,
+   "whineVolumePer10kRPM": 0.06,
+   "whinePitchPer10kRPM": 0.074,
+   "wastegateStart": "$dt_bus_boost_360",
+   "wastegateLimit": "$=$dt_bus_boost_360+1",
+   "maxExhaustPower": 16000,
+   "backPressureCoef": 5e-05,
+   "frictionCoef": 12,
+   "inertia": 15,
+   "damageThresholdTemperature": 750,
+   "pressurePSI": [
+    [
+     0,
+     0
+    ],
+    [
+     30000,
+     10
+    ],
+    [
+     60000,
+     20
+    ],
+    [
+     90000,
+     36
+    ],
+    [
+     120000,
+     46
+    ],
+    [
+     150000,
+     52
+    ],
+    [
+     200000,
+     58
+    ],
+    [
+     250000,
+     63
+    ],
+    [
+     300000,
+     66
+    ]
+   ],
+   "engineDef": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     200,
+     0.37,
+     0.1
+    ],
+    [
+     400,
+     0.51,
+     0.3
+    ],
+    [
+     600,
+     0.64,
+     0.54
+    ],
+    [
+     800,
+     0.76,
+     0.75
+    ],
+    [
+     1000,
+     0.726,
+     0.87
+    ],
+    [
+     1200,
+     0.78,
+     0.9
+    ],
+    [
+     1400,
+     0.805,
+     0.87
+    ],
+    [
+     1500,
+     0.831,
+     0.81
+    ],
+    [
+     1600,
+     0.807,
+     0.75
+    ],
+    [
+     1800,
+     0.725,
+     0.67
+    ],
+    [
+     2000,
+     0.672,
+     0.59
+    ],
+    [
+     2200,
+     0.74,
+     0.51
+    ],
+    [
+     2400,
+     0.234,
+     0.43
+    ],
+    [
+     2600,
+     0.0,
+     0.35
+    ],
+    [
+     2800,
+     0.0,
+     0.26
+    ],
+    [
+     3000,
+     0.0,
+     0.18
+    ]
+   ]
+  },
+  "mainEngine": {
+   "turbocharger": "turbocharger",
+   "deformGroups_turbo": [
+    "mainEngine_turbo",
+    "mainEngine_intercooler",
+    "mainEngine_piping"
+   ]
+  }
+ },
+ "citybus_ai_turbo_drivetech_cursor9_400": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Cursor 9 Turbo (400 PS / 1700 Nm)",
+   "value": 7800
+  },
+  "slotType": "citybus_ai_turbo",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_boost_400",
+    "range",
+    "psi",
+    "DriveTech",
+    41.5,
+    31.5,
+    51.5,
+    "Boost (wastegate)",
+    "Stock calibration 41.5 psi. Higher = more power",
+    {
+     "stepDis": 0.5
+    }
+   ]
+  ],
+  "turbocharger": {
+   "hissLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
+   "whineLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
+   "bovEnabled": false,
+   "bovSoundVolumeCoef": 0.0,
+   "hissVolumePerPSI": 0.0,
+   "whineVolumePer10kRPM": 0.06,
+   "whinePitchPer10kRPM": 0.074,
+   "wastegateStart": "$dt_bus_boost_400",
+   "wastegateLimit": "$=$dt_bus_boost_400+1",
+   "maxExhaustPower": 16000,
+   "backPressureCoef": 5e-05,
+   "frictionCoef": 12,
+   "inertia": 15,
+   "damageThresholdTemperature": 750,
+   "pressurePSI": [
+    [
+     0,
+     0
+    ],
+    [
+     30000,
+     10
+    ],
+    [
+     60000,
+     20
+    ],
+    [
+     90000,
+     36
+    ],
+    [
+     120000,
+     46
+    ],
+    [
+     150000,
+     52
+    ],
+    [
+     200000,
+     58
+    ],
+    [
+     250000,
+     63
+    ],
+    [
+     300000,
+     66
+    ]
+   ],
+   "engineDef": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     200,
+     0.37,
+     0.1
+    ],
+    [
+     400,
+     0.51,
+     0.3
+    ],
+    [
+     600,
+     0.64,
+     0.54
+    ],
+    [
+     800,
+     0.76,
+     0.75
+    ],
+    [
+     1000,
+     0.723,
+     0.87
+    ],
+    [
+     1200,
+     0.776,
+     0.9
+    ],
+    [
+     1400,
+     0.801,
+     0.87
+    ],
+    [
+     1500,
+     0.826,
+     0.81
+    ],
+    [
+     1600,
+     0.852,
+     0.75
+    ],
+    [
+     1800,
+     0.802,
+     0.67
+    ],
+    [
+     2000,
+     0.745,
+     0.59
+    ],
+    [
+     2200,
+     0.816,
+     0.51
+    ],
+    [
+     2400,
+     0.28,
+     0.43
+    ],
+    [
+     2600,
+     0.0,
+     0.35
+    ],
+    [
+     2800,
+     0.0,
+     0.26
+    ],
+    [
+     3000,
+     0.0,
+     0.18
+    ]
+   ]
+  },
+  "mainEngine": {
+   "turbocharger": "turbocharger",
+   "deformGroups_turbo": [
+    "mainEngine_turbo",
+    "mainEngine_intercooler",
+    "mainEngine_piping"
+   ]
+  }
+ },
+ "citybus_ai_turbo_drivetech_cursor9ng_310": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Cursor 9 NG Turbo (310 PS / 1300 Nm)",
+   "value": 6900
+  },
+  "slotType": "citybus_ai_turbo_cng",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_boost_310ng",
+    "range",
+    "psi",
+    "DriveTech",
+    22.5,
+    12.5,
+    32.5,
+    "Boost (wastegate)",
+    "Stock calibration 22.5 psi. Higher = more power",
+    {
+     "stepDis": 0.5
+    }
+   ]
+  ],
+  "turbocharger": {
+   "hissLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
+   "whineLoopEvent": "event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
+   "bovEnabled": false,
+   "bovSoundVolumeCoef": 0.0,
+   "hissVolumePerPSI": 0.0,
+   "whineVolumePer10kRPM": 0.06,
+   "whinePitchPer10kRPM": 0.074,
+   "wastegateStart": "$dt_bus_boost_310ng",
+   "wastegateLimit": "$=$dt_bus_boost_310ng+1",
+   "maxExhaustPower": 16000,
+   "backPressureCoef": 5e-05,
+   "frictionCoef": 12,
+   "inertia": 15,
+   "damageThresholdTemperature": 750,
+   "pressurePSI": [
+    [
+     0,
+     0
+    ],
+    [
+     30000,
+     10
+    ],
+    [
+     60000,
+     20
+    ],
+    [
+     90000,
+     36
+    ],
+    [
+     120000,
+     46
+    ],
+    [
+     150000,
+     52
+    ],
+    [
+     200000,
+     58
+    ],
+    [
+     250000,
+     63
+    ],
+    [
+     300000,
+     66
+    ]
+   ],
+   "engineDef": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     200,
+     0.37,
+     0.1
+    ],
+    [
+     400,
+     0.51,
+     0.3
+    ],
+    [
+     600,
+     0.64,
+     0.54
+    ],
+    [
+     800,
+     0.76,
+     0.75
+    ],
+    [
+     1000,
+     0.772,
+     0.87
+    ],
+    [
+     1200,
+     0.796,
+     0.9
+    ],
+    [
+     1400,
+     0.762,
+     0.87
+    ],
+    [
+     1500,
+     0.737,
+     0.81
+    ],
+    [
+     1600,
+     0.721,
+     0.75
+    ],
+    [
+     1800,
+     0.637,
+     0.67
+    ],
+    [
+     2000,
+     0.522,
+     0.59
+    ],
+    [
+     2200,
+     0.0,
+     0.51
+    ],
+    [
+     2400,
+     0.0,
+     0.43
+    ],
+    [
+     2600,
+     0.0,
+     0.35
+    ],
+    [
+     2800,
+     0.0,
+     0.26
+    ],
+    [
+     3000,
+     0.0,
+     0.18
+    ]
+   ]
+  },
+  "mainEngine": {
+   "turbocharger": "turbocharger",
+   "deformGroups_turbo": [
+    "mainEngine_turbo",
+    "mainEngine_intercooler",
+    "mainEngine_piping"
+   ]
+  }
+ },
+ "citybus_ai_engine_ecu_drivetech_cursor9": {
+  "information": {
+   "authors": "jx-grxf",
+   "name": "DriveTech Cursor 9 Engine Management",
+   "value": 900
+  },
+  "slotType": "citybus_ai_engine_ecu",
+  "slots2": [
+   [
+    "name",
+    "allowTypes",
+    "denyTypes",
+    "default",
+    "description"
+   ],
+   [
+    "citybus_ai_drivetech_load",
+    [
+     "citybus_ai_drivetech_load"
+    ],
+    [],
+    "",
+    "Standing Passengers"
+   ]
+  ],
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_revlimit",
+    "range",
+    "rpm",
+    "DriveTech",
+    2300,
+    2100,
+    2600,
+    "Rev limiter",
+    "Cursor 9 rated speed is 2200 rpm (gas: 2000 rpm)",
+    {
+     "stepDis": 50
+    }
+   ],
+   [
+    "$dt_bus_vmax",
+    "range",
+    "km/h",
+    "DriveTech",
+    100,
+    50,
+    140,
+    "Speed limiter",
+    "EU buses are limited to 100 km/h",
+    {
+     "stepDis": 1
+    }
+   ]
+  ],
+  "mainEngine": {
+   "maxRPM": 2300,
+   "revLimiterRPM": "$dt_bus_revlimit",
+   "revLimiterType": "soft",
+   "particulates": 0.02
+  },
+  "vehicleController": {
+   "topSpeedLimit": "$=$dt_bus_vmax/3.6"
+  }
+ },
+ "citybus_ai_finaldrive_R_drivetech": {
+  "information": {
+   "authors": "jx-grxf",
+   "name": "DriveTech Rear Final Drive (adjustable)",
+   "value": 150
+  },
+  "slotType": "citybus_ai_finaldrive_R",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_finaldrive",
+    "range",
+    ":1",
+    "DriveTech",
+    4.63,
+    3.0,
+    6.5,
+    "Final drive ratio",
+    "Crossway LE with EcoLife: 4.63. Higher = more pull, lower top speed",
+    {
+     "stepDis": 0.01
+    }
+   ]
+  ],
+  "differential_R": {
+   "gearRatio": "$dt_bus_finaldrive"
+  }
+ },
+ "citybus_ai_transmission_drivetech_ecolife": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech 6-Speed Automatic (ZF EcoLife, retarder)",
+   "value": 11800
+  },
+  "slotType": "citybus_ai_transmission",
+  "slots2": [
+   [
+    "name",
+    "allowTypes",
+    "denyTypes",
+    "default",
+    "description"
+   ],
+   [
+    "citybus_ai_converter",
+    [
+     "citybus_ai_converter"
+    ],
+    [],
+    "citybus_ai_converter_drivetech_ecolife",
+    "Torque Converter",
+    {
+     "coreSlot": true
+    }
+   ]
+  ],
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_kickdown",
+    "range",
+    "rpm",
+    "DriveTech",
+    2150,
+    1800,
+    2200,
+    "Kickdown shift speed",
+    "Upshift speed at full throttle. Part throttle shifts at about 1500 rpm",
+    {
+     "stepDis": 50
+    }
+   ]
+  ],
+  "powertrain": [
+   [
+    "type",
+    "name",
+    "inputName",
+    "inputIndex"
+   ],
+   [
+    "torqueConverter",
+    "torqueConverter",
+    "mainEngine",
+    1
+   ],
+   [
+    "automaticGearbox",
+    "gearbox",
+    "torqueConverter",
+    1
+   ],
+   [
+    "differential",
+    "retarder",
+    "gearbox",
+    1,
+    {
+     "diffType": "locked",
+     "lockTorque": 50000,
+     "friction": 0.44,
+     "dynamicFriction": 0.00048,
+     "torqueLossCoef": 0.004,
+     "uiName": "Transmission Output Shaft",
+     "defaultVirtualInertia": 0.1
+    }
+   ],
+   [
+    "hydrodynamicRetarder",
+    "dtRetarder",
+    "retarder",
+    2
+   ]
+  ],
+  "gearbox": {
+   "uiName": "Gearbox",
+   "gearRatios": [
+    -5.03,
+    0,
+    3.364,
+    1.909,
+    1.421,
+    1.0,
+    0.72,
+    0.615
+   ],
+   "friction": 4.69,
+   "dynamicFriction": 0.0047,
+   "torqueLossCoef": 0.016,
+   "parkLockTorque": 50000,
+   "oneWayViscousCoef": 100,
+   "gearboxNode:": [
+    "tra1"
+   ],
+   "gearWhineCoefsInput": [
+    0.64,
+    0.0,
+    0.64,
+    0.62,
+    0.6,
+    0.58,
+    0.56,
+    0.54,
+    0.52,
+    0.5,
+    0.48,
+    0.46
+   ],
+   "gearWhineCoefsOutput": [
+    0.0,
+    0.0,
+    0.64,
+    0.66,
+    0.68,
+    0.7,
+    0.72,
+    0.74,
+    0.76,
+    0.78,
+    0.8,
+    0.82
+   ],
+   "gearWhineInputEvent": "event:>Vehicle>Transmission>bus_01>transaxle_in",
+   "gearWhineOutputEvent": "event:>Vehicle>Transmission>bus_01>transaxle_out"
+  },
+  "dtRetarder": {
+   "brakeTorque": [
+    [
+     "rpm",
+     "torque"
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     100,
+     60
+    ],
+    [
+     200,
+     250
+    ],
+    [
+     300,
+     550
+    ],
+    [
+     400,
+     950
+    ],
+    [
+     500,
+     1450
+    ],
+    [
+     600,
+     2000
+    ],
+    [
+     700,
+     2500
+    ],
+    [
+     800,
+     2900
+    ],
+    [
+     900,
+     3000
+    ],
+    [
+     1270,
+     3000
+    ],
+    [
+     1500,
+     2546
+    ],
+    [
+     1800,
+     2122
+    ],
+    [
+     2100,
+     1819
+    ],
+    [
+     2400,
+     1592
+    ],
+    [
+     2800,
+     1364
+    ],
+    [
+     3200,
+     1194
+    ],
+    [
+     4000,
+     955
+    ]
+   ],
+   "strengthSmoothing": 6
+  },
+  "controller": [
+   [
+    "fileName"
+   ],
+   [
+    "braking/retarderControl",
+    {
+     "name": "retarderControl"
+    }
+   ],
+   [
+    "driveTechBus/retarderDefault",
+    {
+     "name": "driveTechBusRetarderDefault"
+    }
+   ]
+  ],
+  "retarderControl": {
+   "controlledRetarder": "dtRetarder",
+   "retarderManualLevels": [
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+   ],
+   "hasAutoMode": true,
+   "electricsNameSetting": "retarder",
+   "electricsNameActual": "retarder_actual",
+   "electricsNameIsEnabled": "retarder_isEnabled",
+   "electricsNameLevelIndex": "retarder_levelIndex",
+   "disableWhenThrottleApplied": true,
+   "throttleDisableElectricsName": "throttle",
+   "throttleDisableThreshold": 0.001
+  },
+  "driveTechBusRetarderDefault": {
+   "defaultMode": "auto"
+  },
+  "actionsEnabled": [
+   [
+    "id"
+   ],
+   [
+    "increaseRetarderLevel"
+   ],
+   [
+    "decreaseRetarderLevel"
+   ]
+  ],
+  "vehicleController": {
+   "automaticModes": "PRNDM",
+   "useSmartAggressionCalculation": false,
+   "calculateOptimalLoadShiftPoints": false,
+   "transmissionGearChangeDelay": 0.8,
+   "gearboxDecisionSmoothingDown": 2,
+   "gearboxDecisionSmoothingUp": 2,
+   "throttleCoefWhileShifting": 0.35,
+   "highShiftUpRPM": "$dt_bus_kickdown",
+   "highShiftDownRPM": 1400,
+   "lowShiftUpRPM": 1500,
+   "lowShiftDownRPM": 800
+  },
+  "flexbodies": [
+   [
+    "mesh",
+    "[group]:"
+   ],
+   [
+    "citybus_ai_transmission",
+    [
+     "citybus_ai_transmission",
+     "citybus_ai_engine_L",
+     "citybus_ai_engine_R"
+    ]
+   ]
+  ],
+  "nodes": [
+   [
+    "id",
+    "posX",
+    "posY",
+    "posZ"
+   ],
+   {
+    "selfCollision": true
+   },
+   {
+    "collision": true
+   },
+   {
+    "nodeWeight": 80
+   },
+   {
+    "frictionCoef": 0.5
+   },
+   {
+    "nodeMaterial": "|NM_METAL"
+   },
+   {
+    "group": "citybus_ai_transmission"
+   },
+   [
+    "tra2r",
+    -0.22,
+    4.15,
+    0.28
+   ],
+   [
+    "tra2l",
+    0.22,
+    4.15,
+    0.28
+   ],
+   [
+    "tra1",
+    -0.05,
+    4.28,
+    0.562
+   ],
+   [
+    "tra3r",
+    -0.15,
+    4.4,
+    0.73
+   ],
+   [
+    "tra3l",
+    0.15,
+    4.4,
+    0.73
+   ],
+   {
+    "group": ""
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 20001000,
+    "beamDamp": 5000
+   },
+   {
+    "beamDeform": 250000,
+    "beamStrength": "FLT_MAX"
+   },
+   [
+    "tra1",
+    "tra2r"
+   ],
+   [
+    "tra1",
+    "tra2l"
+   ],
+   [
+    "tra1",
+    "tra3r"
+   ],
+   [
+    "tra1",
+    "tra3l"
+   ],
+   [
+    "tra2r",
+    "tra2l"
+   ],
+   [
+    "tra3r",
+    "tra3l"
+   ],
+   [
+    "tra2r",
+    "tra3r"
+   ],
+   [
+    "tra2l",
+    "tra3l"
+   ],
+   [
+    "tra2r",
+    "tra3l"
+   ],
+   [
+    "tra2l",
+    "tra3r"
+   ],
+   [
+    "tra1",
+    "en2r"
+   ],
+   [
+    "tra1",
+    "en2l"
+   ],
+   [
+    "tra3l",
+    "en1l"
+   ],
+   [
+    "tra3r",
+    "en1r"
+   ],
+   [
+    "tra2r",
+    "en2r"
+   ],
+   [
+    "tra2r",
+    "en2l"
+   ],
+   [
+    "tra2r",
+    "en4r"
+   ],
+   [
+    "tra2r",
+    "en4l"
+   ],
+   [
+    "tra2l",
+    "en2r"
+   ],
+   [
+    "tra2l",
+    "en2l"
+   ],
+   [
+    "tra2l",
+    "en4r"
+   ],
+   [
+    "tra2l",
+    "en4l"
+   ],
+   [
+    "tra3r",
+    "en2r"
+   ],
+   [
+    "tra3r",
+    "en2l"
+   ],
+   [
+    "tra3r",
+    "en4r"
+   ],
+   [
+    "tra3r",
+    "en4l"
+   ],
+   [
+    "tra3l",
+    "en2r"
+   ],
+   [
+    "tra3l",
+    "en2l"
+   ],
+   [
+    "tra3l",
+    "en4r"
+   ],
+   [
+    "tra3l",
+    "en4l"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 4001000,
+    "beamDamp": 2500
+   },
+   {
+    "beamDeform": 50000,
+    "beamStrength": 295000
+   },
+   [
+    "tra2l",
+    "fs15l"
+   ],
+   [
+    "tra2r",
+    "fs15r"
+   ],
+   [
+    "tra1",
+    "fs15l"
+   ],
+   [
+    "tra1",
+    "fs15r"
+   ],
+   [
+    "tra2l",
+    "fs15r"
+   ],
+   [
+    "tra2r",
+    "fs15l"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   }
+  ]
+ },
+ "citybus_ai_converter_drivetech_ecolife": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech EcoLife Torque Converter",
+   "value": 650
+  },
+  "slotType": "citybus_ai_converter",
+  "torqueConverter": {
+   "uiName": "Torque Converter",
+   "converterDiameter": 0.44,
+   "converterStiffness": 12,
+   "couplingAVRatio": 0.88,
+   "stallTorqueRatio": 2.02,
+   "lockupClutchTorque": 2800,
+   "additionalEngineInertia": 1.1
+  },
+  "vehicleController": {
+   "torqueConverterLockupRPM": 1000,
+   "torqueConverterLockupMinGear": 2,
+   "partialLockupTipInThreshold": 1.0
+  }
+ },
+ "citybus_ai_shock_F_drivetech": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Front Shocks (adjustable)",
+   "value": 1400
+  },
+  "slotType": "citybus_ai_shock_F",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_damp_F",
+    "range",
+    "x",
+    "DriveTech",
+    1.4,
+    0.8,
+    2.2,
+    "Front damping",
+    "1.0 = stock. Higher = less pitching, harsher over bumps",
+    {
+     "stepDis": 0.05
+    }
+   ]
+  ],
+  "flexbodies": [
+   [
+    "mesh",
+    "[group]:",
+    "nonFlexMaterials"
+   ],
+   {
+    "deformGroup": "airbag_F_break",
+    "deformMaterialBase": "citybus",
+    "deformMaterialDamaged": "invis"
+   },
+   [
+    "citybus_ai_shock_F",
+    [
+     "citybus_ai_shock_F"
+    ]
+   ],
+   {
+    "deformGroup": "",
+    "deformMaterialBase": "",
+    "deformMaterialDamaged": ""
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|BOUNDED",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 0,
+    "beamDeform": 50000,
+    "beamStrength": 150000
+   },
+   {
+    "beamLimitSpring": 0,
+    "beamLimitDamp": 0
+   },
+   {
+    "breakGroup": "airbag_F_break"
+   },
+   {
+    "deformGroup": "airbag_F_break",
+    "deformationTriggerRatio": 0.1
+   },
+   {
+    "breakGroupType": 1
+   },
+   {
+    "beamDamp": "$=18000*$dt_bus_damp_F",
+    "beamDampRebound": "$=36000*$dt_bus_damp_F",
+    "beamDampFast": "$=9000*$dt_bus_damp_F",
+    "beamDampReboundFast": "$=18000*$dt_bus_damp_F",
+    "beamDampVelocitySplit": 0.1,
+    "dampCutoffHz": 500
+   },
+   [
+    "fax8l",
+    "fs17l"
+   ],
+   [
+    "fax8l",
+    "fs18l"
+   ],
+   [
+    "fax8r",
+    "fs17r"
+   ],
+   [
+    "fax8r",
+    "fs18r"
+   ],
+   {
+    "breakGroupType": 0
+   },
+   {
+    "deformGroup": "",
+    "deformationTriggerRatio": ""
+   },
+   {
+    "breakGroup": ""
+   },
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   }
+  ]
+ },
+ "citybus_ai_35_shock_R_drivetech": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Rear Shocks (adjustable)",
+   "value": 1400
+  },
+  "slotType": "citybus_ai_35_shock_R",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_damp_R",
+    "range",
+    "x",
+    "DriveTech",
+    1.3,
+    0.8,
+    2.2,
+    "Rear damping",
+    "1.0 = stock. Higher = less pitching, harsher over bumps",
+    {
+     "stepDis": 0.05
+    }
+   ]
+  ],
+  "flexbodies": [
+   [
+    "mesh",
+    "[group]:",
+    "nonFlexMaterials"
+   ],
+   {
+    "deformGroup": "airbag_R1_break",
+    "deformMaterialBase": "citybus",
+    "deformMaterialDamaged": "invis"
+   },
+   [
+    "citybus_ai_35_shocks_R",
+    [
+     "citybus_ai_35_airbags_R"
+    ]
+   ],
+   {
+    "deformGroup": "",
+    "deformMaterialBase": "",
+    "deformMaterialDamaged": ""
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|BOUNDED",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 0,
+    "beamDeform": 50000,
+    "beamStrength": 150000
+   },
+   {
+    "beamLimitSpring": 0,
+    "beamLimitDamp": 0
+   },
+   {
+    "breakGroup": "airbag_R_break"
+   },
+   {
+    "deformGroup": "airbag_R_break",
+    "deformationTriggerRatio": 0.1
+   },
+   {
+    "breakGroupType": 1
+   },
+   {
+    "beamDamp": "$=22000*$dt_bus_damp_R",
+    "beamDampRebound": "$=44000*$dt_bus_damp_R",
+    "beamDampFast": "$=11000*$dt_bus_damp_R",
+    "beamDampReboundFast": "$=22000*$dt_bus_damp_R",
+    "beamDampVelocitySplit": 0.1,
+    "dampCutoffHz": 500
+   },
+   [
+    "ab1l",
+    "ab3l"
+   ],
+   [
+    "ab1r",
+    "ab3r"
+   ],
+   [
+    "ab2l",
+    "ab4l"
+   ],
+   [
+    "ab2r",
+    "ab4r"
+   ],
+   {
+    "breakGroupType": 0
+   },
+   {
+    "deformGroup": "",
+    "deformationTriggerRatio": ""
+   },
+   {
+    "breakGroup": ""
+   },
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   }
+  ]
+ },
+ "citybus_ai_45_shock_R_drivetech": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Rear Shocks (adjustable)",
+   "value": 1400
+  },
+  "slotType": "citybus_ai_45_shock_R",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_damp_R",
+    "range",
+    "x",
+    "DriveTech",
+    1.3,
+    0.8,
+    2.2,
+    "Rear damping",
+    "1.0 = stock. Higher = less pitching, harsher over bumps",
+    {
+     "stepDis": 0.05
+    }
+   ]
+  ],
+  "flexbodies": [
+   [
+    "mesh",
+    "[group]:",
+    "nonFlexMaterials"
+   ],
+   {
+    "deformGroup": "airbag_R1_break",
+    "deformMaterialBase": "citybus",
+    "deformMaterialDamaged": "invis"
+   },
+   [
+    "citybus_ai_45_shocks_R",
+    [
+     "citybus_airbags_R"
+    ]
+   ],
+   {
+    "deformGroup": "",
+    "deformMaterialBase": "",
+    "deformMaterialDamaged": ""
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|BOUNDED",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 0,
+    "beamDeform": 50000,
+    "beamStrength": 150000
+   },
+   {
+    "beamLimitSpring": 0,
+    "beamLimitDamp": 0
+   },
+   {
+    "breakGroup": "airbag_R_break"
+   },
+   {
+    "deformGroup": "airbag_R_break",
+    "deformationTriggerRatio": 0.1
+   },
+   {
+    "breakGroupType": 1
+   },
+   {
+    "beamDamp": "$=22000*$dt_bus_damp_R",
+    "beamDampRebound": "$=44000*$dt_bus_damp_R",
+    "beamDampFast": "$=11000*$dt_bus_damp_R",
+    "beamDampReboundFast": "$=22000*$dt_bus_damp_R",
+    "beamDampVelocitySplit": 0.1,
+    "dampCutoffHz": 500
+   },
+   [
+    "ab1l",
+    "ab3l"
+   ],
+   [
+    "ab1r",
+    "ab3r"
+   ],
+   [
+    "ab2l",
+    "ab4l"
+   ],
+   [
+    "ab2r",
+    "ab4r"
+   ],
+   {
+    "breakGroupType": 0
+   },
+   {
+    "deformGroup": "",
+    "deformationTriggerRatio": ""
+   },
+   {
+    "breakGroup": ""
+   },
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   }
+  ]
+ },
+ "citybus_ai_45_shock_RR_drivetech": {
+  "information": {
+   "authors": "BeamNG, jx-grxf",
+   "name": "DriveTech Tag Axle Shocks (adjustable)",
+   "value": 1400
+  },
+  "slotType": "citybus_ai_45_shock_RR",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_damp_RR",
+    "range",
+    "x",
+    "DriveTech",
+    1.3,
+    0.8,
+    2.2,
+    "Tag Axle damping",
+    "1.0 = stock. Higher = less pitching, harsher over bumps",
+    {
+     "stepDis": 0.05
+    }
+   ]
+  ],
+  "flexbodies": [
+   [
+    "mesh",
+    "[group]:",
+    "nonFlexMaterials"
+   ],
+   {
+    "deformGroup": "airbag_RR_break",
+    "deformMaterialBase": "citybus",
+    "deformMaterialDamaged": "invis"
+   },
+   [
+    "citybus_ai_45_shock_RR",
+    [
+     "citybus_ai_45_shock_RR"
+    ]
+   ],
+   {
+    "deformGroup": "",
+    "deformMaterialBase": "",
+    "deformMaterialDamaged": ""
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|BOUNDED",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 0,
+    "beamDeform": 50000,
+    "beamStrength": 150000
+   },
+   {
+    "beamLimitSpring": 0,
+    "beamLimitDamp": 0
+   },
+   {
+    "breakGroup": "airbag_RR_break"
+   },
+   {
+    "deformGroup": "airbag_RR_break",
+    "deformationTriggerRatio": 0.1
+   },
+   {
+    "breakGroupType": 1
+   },
+   {
+    "beamDamp": "$=18000*$dt_bus_damp_RR",
+    "beamDampRebound": "$=36000*$dt_bus_damp_RR",
+    "beamDampFast": "$=9000*$dt_bus_damp_RR",
+    "beamDampReboundFast": "$=18000*$dt_bus_damp_RR",
+    "beamDampVelocitySplit": 0.1,
+    "dampCutoffHz": 500
+   },
+   [
+    "2rax8l",
+    "2fs17l"
+   ],
+   [
+    "2rax8l",
+    "2fs18l"
+   ],
+   [
+    "2rax8r",
+    "2fs17r"
+   ],
+   [
+    "2rax8r",
+    "2fs18r"
+   ],
+   {
+    "breakGroupType": 0
+   },
+   {
+    "deformGroup": "",
+    "deformationTriggerRatio": ""
+   },
+   {
+    "breakGroup": ""
+   },
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   }
+  ]
+ },
+ "citybus_ai_drivetech_load_40": {
+  "information": {
+   "authors": "jx-grxf",
+   "name": "DriveTech Standing Passengers (DT40L / DT45L floor)",
+   "value": 0
+  },
+  "slotType": "citybus_ai_drivetech_load",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_standees",
+    "range",
+    "",
+    "DriveTech",
+    0,
+    0,
+    70,
+    "Standing passengers",
+    "75 kg each, spread over the low floor between the axles",
+    {
+     "stepDis": 1
+    }
+   ]
+  ],
+  "nodes": [
+   [
+    "id",
+    "posX",
+    "posY",
+    "posZ"
+   ],
+   {
+    "collision": false
+   },
+   {
+    "selfCollision": false
+   },
+   {
+    "nodeMaterial": "|NM_METAL"
+   },
+   {
+    "frictionCoef": 0.5
+   },
+   {
+    "nodeWeight": "$=1+$dt_bus_standees*75/8"
+   },
+   {
+    "group": ""
+   },
+   [
+    "dtpl1r",
+    -0.46,
+    -3.4,
+    0.55
+   ],
+   [
+    "dtpl1l",
+    0.46,
+    -3.4,
+    0.55
+   ],
+   [
+    "dtpl2r",
+    -0.46,
+    -2.32,
+    0.55
+   ],
+   [
+    "dtpl2l",
+    0.46,
+    -2.32,
+    0.55
+   ],
+   [
+    "dtpl3r",
+    -0.46,
+    -0.66,
+    0.55
+   ],
+   [
+    "dtpl3l",
+    0.46,
+    -0.66,
+    0.55
+   ],
+   [
+    "dtpl4r",
+    -0.46,
+    0.38,
+    0.55
+   ],
+   [
+    "dtpl4l",
+    0.46,
+    0.38,
+    0.55
+   ],
+   {
+    "collision": true
+   },
+   {
+    "selfCollision": true
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 6001000,
+    "beamDamp": 600
+   },
+   {
+    "beamDeform": "FLT_MAX",
+    "beamStrength": "FLT_MAX"
+   },
+   [
+    "dtpl1r",
+    "fm5r"
+   ],
+   [
+    "dtpl1r",
+    "fm5rr"
+   ],
+   [
+    "dtpl1r",
+    "fm5l"
+   ],
+   [
+    "dtpl1r",
+    "fm4r"
+   ],
+   [
+    "dtpl1r",
+    "fm6r"
+   ],
+   [
+    "dtpl1l",
+    "fm5l"
+   ],
+   [
+    "dtpl1l",
+    "fm5ll"
+   ],
+   [
+    "dtpl1l",
+    "fm5r"
+   ],
+   [
+    "dtpl1l",
+    "fm4l"
+   ],
+   [
+    "dtpl1l",
+    "fm6l"
+   ],
+   [
+    "dtpl2r",
+    "fm6r"
+   ],
+   [
+    "dtpl2r",
+    "fm6rr"
+   ],
+   [
+    "dtpl2r",
+    "fm6l"
+   ],
+   [
+    "dtpl2r",
+    "fm5r"
+   ],
+   [
+    "dtpl2r",
+    "fm7r"
+   ],
+   [
+    "dtpl2l",
+    "fm6l"
+   ],
+   [
+    "dtpl2l",
+    "fm6ll"
+   ],
+   [
+    "dtpl2l",
+    "fm6r"
+   ],
+   [
+    "dtpl2l",
+    "fm5l"
+   ],
+   [
+    "dtpl2l",
+    "fm7l"
+   ],
+   [
+    "dtpl3r",
+    "fm8r"
+   ],
+   [
+    "dtpl3r",
+    "fm8rr"
+   ],
+   [
+    "dtpl3r",
+    "fm8l"
+   ],
+   [
+    "dtpl3r",
+    "fm7r"
+   ],
+   [
+    "dtpl3r",
+    "fm9r"
+   ],
+   [
+    "dtpl3l",
+    "fm8l"
+   ],
+   [
+    "dtpl3l",
+    "fm8ll"
+   ],
+   [
+    "dtpl3l",
+    "fm8r"
+   ],
+   [
+    "dtpl3l",
+    "fm7l"
+   ],
+   [
+    "dtpl3l",
+    "fm9l"
+   ],
+   [
+    "dtpl4r",
+    "fm9r"
+   ],
+   [
+    "dtpl4r",
+    "fm9rr"
+   ],
+   [
+    "dtpl4r",
+    "fm9l"
+   ],
+   [
+    "dtpl4r",
+    "fm8r"
+   ],
+   [
+    "dtpl4r",
+    "fm11r"
+   ],
+   [
+    "dtpl4l",
+    "fm9l"
+   ],
+   [
+    "dtpl4l",
+    "fm9ll"
+   ],
+   [
+    "dtpl4l",
+    "fm9r"
+   ],
+   [
+    "dtpl4l",
+    "fm8l"
+   ],
+   [
+    "dtpl4l",
+    "fm11l"
+   ]
+  ]
+ },
+ "citybus_ai_drivetech_load_35": {
+  "information": {
+   "authors": "jx-grxf",
+   "name": "DriveTech Standing Passengers (DT35L floor)",
+   "value": 0
+  },
+  "slotType": "citybus_ai_drivetech_load",
+  "variables": [
+   [
+    "name",
+    "type",
+    "unit",
+    "category",
+    "default",
+    "min",
+    "max",
+    "title",
+    "description"
+   ],
+   [
+    "$dt_bus_standees",
+    "range",
+    "",
+    "DriveTech",
+    0,
+    0,
+    70,
+    "Standing passengers",
+    "75 kg each, spread over the low floor between the axles",
+    {
+     "stepDis": 1
+    }
+   ]
+  ],
+  "nodes": [
+   [
+    "id",
+    "posX",
+    "posY",
+    "posZ"
+   ],
+   {
+    "collision": false
+   },
+   {
+    "selfCollision": false
+   },
+   {
+    "nodeMaterial": "|NM_METAL"
+   },
+   {
+    "frictionCoef": 0.5
+   },
+   {
+    "nodeWeight": "$=1+$dt_bus_standees*75/8"
+   },
+   {
+    "group": ""
+   },
+   [
+    "dtpl1r",
+    -0.46,
+    -3.4,
+    0.55
+   ],
+   [
+    "dtpl1l",
+    0.46,
+    -3.4,
+    0.55
+   ],
+   [
+    "dtpl2r",
+    -0.46,
+    -2.32,
+    0.55
+   ],
+   [
+    "dtpl2l",
+    0.46,
+    -2.32,
+    0.55
+   ],
+   [
+    "dtpl3r",
+    -0.46,
+    -1.272,
+    0.55
+   ],
+   [
+    "dtpl3l",
+    0.46,
+    -1.272,
+    0.55
+   ],
+   [
+    "dtpl4r",
+    -0.46,
+    -0.052,
+    0.55
+   ],
+   [
+    "dtpl4l",
+    0.46,
+    -0.052,
+    0.55
+   ],
+   {
+    "collision": true
+   },
+   {
+    "selfCollision": true
+   }
+  ],
+  "beams": [
+   [
+    "id1:",
+    "id2:"
+   ],
+   {
+    "beamPrecompression": 1,
+    "beamType": "|NORMAL",
+    "beamLongBound": 1,
+    "beamShortBound": 1
+   },
+   {
+    "beamSpring": 6001000,
+    "beamDamp": 600
+   },
+   {
+    "beamDeform": "FLT_MAX",
+    "beamStrength": "FLT_MAX"
+   },
+   [
+    "dtpl1r",
+    "fm5r"
+   ],
+   [
+    "dtpl1r",
+    "fm5rr"
+   ],
+   [
+    "dtpl1r",
+    "fm5l"
+   ],
+   [
+    "dtpl1r",
+    "fm4r"
+   ],
+   [
+    "dtpl1r",
+    "fm6r"
+   ],
+   [
+    "dtpl1l",
+    "fm5l"
+   ],
+   [
+    "dtpl1l",
+    "fm5ll"
+   ],
+   [
+    "dtpl1l",
+    "fm5r"
+   ],
+   [
+    "dtpl1l",
+    "fm4l"
+   ],
+   [
+    "dtpl1l",
+    "fm6l"
+   ],
+   [
+    "dtpl2r",
+    "fm6r"
+   ],
+   [
+    "dtpl2r",
+    "fm6rr"
+   ],
+   [
+    "dtpl2r",
+    "fm6l"
+   ],
+   [
+    "dtpl2r",
+    "fm5r"
+   ],
+   [
+    "dtpl2r",
+    "fm9r"
+   ],
+   [
+    "dtpl2l",
+    "fm6l"
+   ],
+   [
+    "dtpl2l",
+    "fm6ll"
+   ],
+   [
+    "dtpl2l",
+    "fm6r"
+   ],
+   [
+    "dtpl2l",
+    "fm5l"
+   ],
+   [
+    "dtpl2l",
+    "fm9l"
+   ],
+   [
+    "dtpl3r",
+    "fm9r"
+   ],
+   [
+    "dtpl3r",
+    "fm9rr"
+   ],
+   [
+    "dtpl3r",
+    "fm9l"
+   ],
+   [
+    "dtpl3r",
+    "fm6r"
+   ],
+   [
+    "dtpl3r",
+    "fm11r"
+   ],
+   [
+    "dtpl3l",
+    "fm9l"
+   ],
+   [
+    "dtpl3l",
+    "fm9ll"
+   ],
+   [
+    "dtpl3l",
+    "fm9r"
+   ],
+   [
+    "dtpl3l",
+    "fm6l"
+   ],
+   [
+    "dtpl3l",
+    "fm11l"
+   ],
+   [
+    "dtpl4r",
+    "fm11r"
+   ],
+   [
+    "dtpl4r",
+    "fm11rr"
+   ],
+   [
+    "dtpl4r",
+    "fm11l"
+   ],
+   [
+    "dtpl4r",
+    "fm9r"
+   ],
+   [
+    "dtpl4r",
+    "fm13r"
+   ],
+   [
+    "dtpl4l",
+    "fm11l"
+   ],
+   [
+    "dtpl4l",
+    "fm11ll"
+   ],
+   [
+    "dtpl4l",
+    "fm11r"
+   ],
+   [
+    "dtpl4l",
+    "fm9l"
+   ],
+   [
+    "dtpl4l",
+    "fm13l"
+   ]
+  ]
+ }
+}

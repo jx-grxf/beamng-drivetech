@@ -1,0 +1,12 @@
+{
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Drivetrain": "RWD",
+  "Population": 0,
+  "Configuration": "DriveTech Crossway LE 12 m 400",
+  "Value": 340000,
+  "Description": "Low-entry bus with the drivetrain of an Iveco Crossway LE 12 m: Cursor 9 diesel (8.7 l, 400 PS / 1700 Nm), 4.63 final drive. ZF EcoLife 6-speed automatic with output retarder (auto mode with the brake pedal, levels on Alt+Y / Alt+H), speed limiter at 100 km/h."
+}

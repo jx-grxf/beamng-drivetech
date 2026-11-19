@@ -1,0 +1,12 @@
+{
+  "Config Type": "Custom",
+  "Fuel Type": "Diesel",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Drivetrain": "RWD",
+  "Population": 0,
+  "Configuration": "DriveTech Urbanway 12 m 360 (full load)",
+  "Value": 330000,
+  "Description": "Urbanway 12 m at rush hour: every seat taken and 60 standing passengers, about 18 t in total. Cursor 9 diesel, 360 PS / 1650 Nm. ZF EcoLife 6-speed automatic with output retarder (auto mode with the brake pedal, levels on Alt+Y / Alt+H), speed limiter at 100 km/h."
+}

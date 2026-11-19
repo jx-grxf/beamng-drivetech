@@ -1,0 +1,12 @@
+{
+  "Config Type": "Custom",
+  "Fuel Type": "Compressed Natural Gas",
+  "Induction Type": "Turbo",
+  "Propulsion": "ICE",
+  "Transmission": "Automatic",
+  "Drivetrain": "RWD",
+  "Population": 0,
+  "Configuration": "DriveTech Urbanway 10.5 m CNG 310",
+  "Value": 325000,
+  "Description": "Short city bus with natural gas: Cursor 9 NG (310 PS / 1300 Nm), 4.63 final drive. Needs the Wentward Pack. ZF EcoLife 6-speed automatic with output retarder (auto mode with the brake pedal, levels on Alt+Y / Alt+H), speed limiter at 100 km/h."
+}

@@ -24,7 +24,7 @@ DriveTech loads into **every** vehicle automatically. Each feature checks whethe
 - [Usage](#usage)
 - [Which cars?](#which-cars)
 - [ETK 800 as a BMW 3 Series](#etk-800-as-a-bmw-3-series)
-- [City bus as an Iveco](#city-bus-as-an-iveco)
+- [DriveTech Bus](#drivetech-bus)
 - [Settings](#settings)
 - [What DriveTech never does](#what-drivetech-never-does)
 - [Development](#development)
@@ -50,7 +50,7 @@ Everything DriveTech has at a glance:
 | **ETK 800 BMW setups** | 320d, 330d, 340d and 340i Touring, each as rear-wheel drive and xDrive (8 configurations), with real engine, gearbox and chassis data. | vehicle selector → ETK 800 |
 | **ETK 800 BMW parts** | 320d, 330d, 340d and 340i ECUs, ZF 8HP50 gearbox, adjustable final drive, adaptive chassis with sliders for springs, dampers and anti-roll bars. | parts menu, category *DriveTech* |
 | **F31 instrument cluster** (beta) | BMW F31-style cluster in orange or white, drawn live: needles, warning lamps, DriveTech profile, DSC mode, auto-stop and launch control. Needs the *ETK 800 Improved Interior* mod by Milendur. | parts menu, slot *gauges* |
-| **City bus Iveco setups** | Urbanway 360 and Crossway LE 400 for the Wentward DT40L: Cursor 9 diesel, ZF EcoLife 6-speed automatic, 100 km/h speed limiter. | vehicle selector → Wentward DT40L |
+| **DriveTech Bus** (separate mod) | Iveco Urbanway and Crossway LE drivetrains for the Wentward DT35L, DT40L and DT45L, with retarder, kickdown and firmer dampers. | `DriveTech_Bus.zip`, see [DriveTech Bus](#drivetech-bus) |
 
 ## Installation
 
@@ -58,6 +58,8 @@ Everything DriveTech has at a glance:
 2. Put the zip **as is** (do not extract) into your mods folder:
    `Documents\BeamNG.drive\current\mods` (or `<your BeamNG user folder>\current\mods`).
 3. Start BeamNG (or enable it in the mod manager) and spawn a vehicle.
+
+For the bus setups put `DriveTech_Bus.zip` into the same folder (see [DriveTech Bus](#drivetech-bus)).
 
 On the first vehicle DriveTech creates `settings/driveTech.json` with all default values.
 
@@ -148,32 +150,41 @@ Sources: BMW Group technical data *BMW 3 Series Touring LCI (F31)* (edition 11/2
 
 The chassis defaults match the ETK ttSport+ adaptive suspension, which is already close to the wheel rates of an F3x with Adaptive M suspension (approx. 26 N/mm front). The drive modes still switch the dampers between soft, regular and hard.
 
-## City bus as an Iveco
+## DriveTech Bus
 
-The stock Wentward DT40L has an 8.9 l diesel with up to approx. 350 PS / 1475 Nm, but only a 4-speed automatic that runs into the rev limiter at about 92 km/h. DriveTech adds two configurations (vehicle selector → Wentward DT40L) with the drivetrain of current Iveco buses:
+A separate mod, `DriveTech_Bus.zip`, with Iveco drivetrains for the Wentward buses. It does not need DriveTech and DriveTech does not need it. The stock DT40L works on its own; the DT35L, DT45L and the CNG setups need the [Wentward Pack](https://www.beamng.com/resources/wentward-pack.4628/) by DaddelZeit and AiTorror. The bus mod only adds parts and configurations and copies nothing from the pack.
 
-| Configuration | Engine | Power / torque (Iveco) | Gearbox | Final drive |
-|---|---|---|---|---|
-| DriveTech Urbanway 360 | Cursor 9, 8.7 l diesel | 360 PS at 2200 rpm / 1650 Nm from 1200 to 1500 rpm | ZF EcoLife 6-speed | 4.63 |
-| DriveTech Crossway LE 400 | Cursor 9, 8.7 l diesel | 400 PS / 1700 Nm from 1200 to 1650 rpm | ZF EcoLife 6-speed | 4.63 |
+| Vehicle | Configuration | Engine | Final drive |
+|---|---|---|---|
+| Wentward DT40L | DriveTech Urbanway 12 m 360 | Cursor 9 diesel, 360 PS / 1650 Nm | 4.63 |
+| Wentward DT40L | DriveTech Urbanway 12 m 360 (full load) | as above, every seat taken plus 60 standing passengers | 4.63 |
+| Wentward DT40L | DriveTech Crossway LE 12 m 400 | Cursor 9 diesel, 400 PS / 1700 Nm | 4.63 |
+| Wentward DT40L | DriveTech Crossway LE Line 12 m 400 (intercity) | Cursor 9 diesel, 400 PS / 1700 Nm, firmer dampers | 4.10 |
+| Wentward DT40L | DriveTech Urbanway 12 m CNG 310 (Wentward Pack) | Cursor 9 NG, 310 PS / 1300 Nm | 4.63 |
+| Wentward DT35L | DriveTech Urbanway 10.5 m 360 | Cursor 9 diesel, 360 PS / 1650 Nm | 4.63 |
+| Wentward DT35L | DriveTech Urbanway 10.5 m CNG 310 | Cursor 9 NG, 310 PS / 1300 Nm | 4.63 |
+| Wentward DT45L | DriveTech Crossway LE 14.5 m 400 | Cursor 9 diesel, 400 PS / 1700 Nm | 4.63 |
 
-- **ZF EcoLife:** 3.364 / 1.909 / 1.421 / 1.000 / 0.720 / 0.615. Reverse stays at the stock 5.03. The torque converter gets a 2800 Nm lockup clutch; the stock one (1500 Nm) would slip behind a Cursor 9.
-- The turbo calibration is computed from BeamNG's turbo model so that net torque at full boost follows the Iveco figures. The stock engine block, sound and weight stay.
-- Speed limiter at 100 km/h like EU buses, rev limiter at 2300 rpm, almost no visible smoke (Euro VI with particulate filter).
+All of them use a ZF EcoLife 6-speed automatic (3.364 / 1.909 / 1.421 / 1.000 / 0.720 / 0.615, reverse stays at 5.03), a speed limiter at 100 km/h and power steering.
+
+**Driving**
+
+- **Shifting:** at part throttle the gearbox upshifts at about 1500 rpm like a real city bus. Floor it and it holds the gear up to 2150 rpm (kickdown, slider *Kickdown shift speed*). The converter locks from 2nd gear above 1000 rpm, and the engine torque is cut during upshifts. The stock bus locked up at 600 rpm with full torque through every shift, which made the body pitch on its air springs.
+- **Retarder:** an output retarder with up to 3000 Nm at the gearbox output and a 400 kW limit. It starts in *Auto* and then brakes along with the brake pedal. *Alt+Y* / *Alt+H* step through Off and levels 1 to 5. The actions *Increase / Decrease retarder level* can be bound to wheel buttons under Options → Controls. Throttle, gear changes and ABS switch it off for the moment.
+- **Dampers:** 40 % firmer than stock at the front, 30 % at the rear (slider per axle, 1.0 = stock).
+- **Stop brake and kneeling** come from the stock bus: an open door holds the bus below 7 km/h, *G* kneels, *O* opens the doors.
+- **Load:** seated passengers are the visible seat occupants (89 kg each). The slider *Standing passengers* (0 to 70, 75 kg each) adds the rest as ballast on the low floor.
+- **UI app *DriveTech Bus*:** retarder level and braking, doors, stop brake, kneeling.
+
+**Calibration:** `tools/gen_bus.py` writes all parts for the stock DT40L (`citybus_*` slots) and for the Wentward Pack buses (`citybus_ai_*` slots) from one source. It computes the turbo efficiency curve from BeamNG's turbo model so that net torque at full boost follows the Iveco figures. Engine block, sound and empty weight stay stock (DT40L: about 12.3 t, the Crossway LE 12 m is listed at 12.2 t).
+
 - The 4.63 final drive is from a test of the Crossway LE 360. No figure was found for the Urbanway, so it uses the same ratio.
+- The Urbanway 10.5 m uses the 12 m drivetrain.
+- The CNG engine runs on the Cursor 9 NG figures from the Urbanway brochure. The brochure gives no speed band, so rated speed is set to 2000 rpm.
 
-Sources: FPT Industrial data sheet *Cursor 9* (power, torque), busplaner bus test *Iveco Urbanway* (torque range), busnetz bus test 05/2019 *Iveco Crossway LE* (gearbox, final drive).
+Sources: FPT Industrial data sheet *Cursor 9* (power, torque), busplaner bus test *Iveco Urbanway* (torque range), busnetz bus test 05/2019 *Iveco Crossway LE* (gearbox, final drive), Iveco Bus *Urbanway* brochure 2022 (CNG).
 
-**New parts** (category *DriveTech*):
-
-| Part | Slot | Sliders |
-|---|---|---|
-| DriveTech Cursor 9 Turbo (360 PS / 1650 Nm) | intake | boost |
-| DriveTech Cursor 9 Turbo (400 PS / 1700 Nm) | intake | boost |
-| DriveTech Cursor 9 Engine Management | engine management | rev limiter, speed limiter |
-| DriveTech 6-Speed Automatic (ZF EcoLife) | transmission | – |
-| DriveTech EcoLife Torque Converter | torque converter | – |
-| DriveTech Rear Final Drive | rear final drive | ratio 3.0 to 6.5 |
+**Parts** (category *DriveTech*): Cursor 9 turbo 360 / 400 and Cursor 9 NG turbo 310 (boost), Cursor 9 engine management (rev and speed limiter), ZF EcoLife gearbox with retarder (kickdown speed), EcoLife torque converter, rear final drive (3.0 to 6.5), front / rear / tag axle shocks (damping), standing passengers (count).
 
 ## Settings
 
@@ -248,17 +259,24 @@ mod/                       contents of DriveTech.zip
   ui/modules/apps/DriveTechLaunchTimer/       0-100 app
   ui/modules/apps/DriveTechRain/              rain + aquaplaning app
   vehicles/                                   ETK parts and configurations
+mod_bus/                   contents of DriveTech_Bus.zip
+  vehicles/citybus*/                          bus configurations and key bindings
+  vehicles/*/driveTechBus*_parts.jbeam        generated by tools/gen_bus.py, do not edit
+  lua/vehicle/controller/driveTechBus/        arms the retarder in Auto on spawn
+  ui/modules/apps/DriveTechBus/               bus driver display
 tests/                     scenario tests with BeamNG mocks (LuaJIT 2.1)
-tools/build.py             validates every jbeam/json file and builds dist/DriveTech.zip
+tools/build.py             validates every jbeam/json file and builds both zips
+tools/gen_bus.py           bus parts and turbo calibration for the stock and Wentward Pack buses
 ```
 
 ```bash
 pip install lupa
 python tests/run_tests.py          # 29 scenarios: launch, shift logic, start-stop, DSC, xDrive, AI safety, ...
-python tools/build.py              # validate + build the zip
+python tools/gen_bus.py            # after changing bus parts, prints the resulting torque curves
+python tools/build.py              # validate + build the zips
 python tools/build.py --install    # also copy it into the BeamNG mods folder
 ```
 
 ---
 
-DriveTech is a fan project and is not affiliated with BMW AG or BeamNG GmbH. License: [MIT](LICENSE)
+DriveTech is a fan project and is not affiliated with BMW AG, Iveco or BeamNG GmbH. License: [MIT](LICENSE)
